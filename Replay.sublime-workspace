@@ -1,1 +1,1234 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Flxgr",
+				"FlxSpriteGroup	flixel.group"
+			],
+			[
+				"sprite",
+				"FlxSpriteGroup	flixel.group"
+			],
+			[
+				"acc",
+				"Access	haxe.macro.Expr"
+			],
+			[
+				"trae",
+				"trace"
+			],
+			[
+				"Re",
+				"ReplayData"
+			],
+			[
+				"el",
+				"timeLeft	Float"
+			],
+			[
+				"_",
+				"_roundTimer"
+			],
+			[
+				"_rou",
+				"_roundTime"
+			],
+			[
+				"replay",
+				"replayEx"
+			],
+			[
+				"rep",
+				"replays	Array<String>"
+			],
+			[
+				"recordi",
+				"recording	var"
+			],
+			[
+				"go",
+				"globalSeed	Int"
+			],
+			[
+				"relay",
+				"ReplayData"
+			],
+			[
+				"Flxre",
+				"FlxReplayEx	replayEx"
+			],
+			[
+				"punc",
+				"PUNCH_RATE	var"
+			],
+			[
+				"read",
+				"isReadyToPunch	var"
+			],
+			[
+				"repa",
+				"replay"
+			],
+			[
+				"flxr",
+				"FlxRandom	flixel.util"
+			],
+			[
+				"repla",
+				"FlxReplayEx	replayEx"
+			],
+			[
+				"replayEX",
+				"replayEx	package"
+			],
+			[
+				"vc",
+				"_vcr	var"
+			],
+			[
+				"V",
+				"VCR	flixel.system.debug"
+			],
+			[
+				"VC",
+				"VCRFrontEndEx	class"
+			],
+			[
+				"name",
+				"nameStr"
+			],
+			[
+				"node",
+				"nodeDataArray"
+			],
+			[
+				"pac",
+				"packetCache"
+			],
+			[
+				"pack",
+				"packet"
+			],
+			[
+				"nic",
+				"nic"
+			],
+			[
+				"get",
+				"getName"
+			],
+			[
+				"packet",
+				"packetCache"
+			],
+			[
+				"stri",
+				"string.upper	(s)"
+			],
+			[
+				"curren",
+				"currentkeypressed"
+			],
+			[
+				"player",
+				"playerName"
+			],
+			[
+				"current",
+				"currentscore"
+			],
+			[
+				"to",
+				"tostring	(e)"
+			],
+			[
+				"gra",
+				"love.graphics.getWidth"
+			],
+			[
+				"key",
+				"keyreleased"
+			],
+			[
+				"_percent",
+				"_percentBarText	var"
+			],
+			[
+				"_percen",
+				"_percentBarText	var"
+			],
+			[
+				"FlxT",
+				"FlxText	flixel.text"
+			],
+			[
+				"_perce",
+				"_percentBar	var"
+			],
+			[
+				"bool",
+				"Bool	class"
+			],
+			[
+				"chec",
+				"checkNegKeyPress	function"
+			],
+			[
+				"keys",
+				"keysPressed	Int"
+			],
+			[
+				"_nega",
+				"_negativeKeys	var"
+			],
+			[
+				"_negative",
+				"_negativeKeysTimer	var"
+			],
+			[
+				"_info",
+				"_infoWindowRedTrace	var"
+			],
+			[
+				"_ke",
+				"_keyFont	var"
+			],
+			[
+				"_ne",
+				"_negativeKeysDisplay"
+			],
+			[
+				"ke",
+				"keyfont__png	String"
+			],
+			[
+				"bitmap",
+				"FlxBitmapFont	flixel.addons.text"
+			],
+			[
+				"bitma",
+				"FlxBitmapFont	flixel.addons.text"
+			],
+			[
+				"bitmapfont",
+				"PxBitmapFont	flixel.text.pxText"
+			],
+			[
+				"Le",
+				"level	Int"
+			],
+			[
+				"in",
+				"intRanged(...)	Int"
+			],
+			[
+				"neg",
+				"negKeyList"
+			],
+			[
+				"Flx",
+				"FlxColor"
+			],
+			[
+				"Wh",
+				"WHITE	Int"
+			],
+			[
+				"_per",
+				"_percentBarWidth"
+			],
+			[
+				"new",
+				"newWidth"
+			],
+			[
+				"trc",
+				"trace"
+			],
+			[
+				"start",
+				"startGame"
+			],
+			[
+				"_l",
+				"_letterCoords"
+			],
+			[
+				"Ob",
+				"ObjectMap	haxe.ds"
+			],
+			[
+				"Sri",
+				"String	class"
+			],
+			[
+				"_game",
+				"_gameTime"
+			],
+			[
+				"mac",
+				"makeGraphic(...)	flixel.FlxSprite"
+			],
+			[
+				"_g",
+				"_gameTime"
+			],
+			[
+				"_ga",
+				"_gameTime	var"
+			],
+			[
+				"Flxt",
+				"FlxTimer	flixel.util"
+			],
+			[
+				"W",
+				"WHITE	Int"
+			],
+			[
+				"flxco",
+				"FlxColor	flixel.util"
+			],
+			[
+				"flxc",
+				"FlxColor	flixel.util"
+			],
+			[
+				"flxmo",
+				"FlxMouseSpring	flixel.addons.display"
+			],
+			[
+				"int",
+				"Int	class"
+			],
+			[
+				"A",
+				"Array<T>	class"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"bacgr",
+				"background-origin"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"food",
+				"foodImages"
+			],
+			[
+				"_sc",
+				"_score	var"
+			],
+			[
+				"_score",
+				"_scoreText	var"
+			],
+			[
+				"s",
+				"string( s : Dynamic )	String"
+			],
+			[
+				"e",
+				"EffectsEighty__ttf	String"
+			],
+			[
+				"_s",
+				"_score	var"
+			],
+			[
+				"_sco",
+				"_scoreText	var"
+			],
+			[
+				"timer",
+				"FlxTimer	flixel.util"
+			],
+			[
+				"c",
+				"color	Int"
+			],
+			[
+				"item",
+				"_itemsLaucherRight	var"
+			],
+			[
+				"wa",
+				"Watch	flixel.system.debug"
+			],
+			[
+				"flxtyp",
+				"FlxTypedGroup	flixel.group"
+			],
+			[
+				"emitter",
+				"FlxTypedEmitter	flixel.effects.particles"
+			],
+			[
+				"flx",
+				"FlxEmitter	flixel.effects.particles"
+			],
+			[
+				"_te",
+				"_itemsLaucherRight	var"
+			],
+			[
+				"poi",
+				"FlxPoint	flixel.util"
+			],
+			[
+				"FlxR",
+				"FlxRect	flixel.util"
+			],
+			[
+				"Assets",
+				"AssetPaths	class"
+			],
+			[
+				"flxgro",
+				"FlxTypedSpriteGroup	flixel.group"
+			],
+			[
+				"G",
+				"GRAY	Int"
+			],
+			[
+				"flxe",
+				"FlxExtendedSprite	flixel.addons.display"
+			],
+			[
+				"w",
+				"width	Int"
+			],
+			[
+				"F",
+				"FlxG"
+			],
+			[
+				"Flxc",
+				"FlxColor	flixel.util"
+			],
+			[
+				"flxg",
+				"FlxGroup	flixel.group"
+			],
+			[
+				"Pla",
+				"PlayState	class"
+			],
+			[
+				"play",
+				"play(...)	flixel.system.FlxSound"
+			],
+			[
+				"pass",
+				"passwordPrompt	flixel.system.FlxSound"
+			],
+			[
+				"fa",
+				"fadeOut(...)	flixel.system.FlxSound"
+			],
+			[
+				"music",
+				"music1	var"
+			],
+			[
+				"pre",
+				"prescreenAI	var"
+			],
+			[
+				"mu",
+				"music1"
+			],
+			[
+				"tas",
+				"task21__ogg"
+			],
+			[
+				"curr",
+				"CurrentAudio	var"
+			],
+			[
+				"m1BED1music_",
+				"m1BED1music__ogg"
+			],
+			[
+				"task",
+				"TASK1__ogg	String"
+			],
+			[
+				"pl",
+				"play(...)	flixel.system.FlxSound"
+			],
+			[
+				"a",
+				"add(...)	flixel.FlxBasic"
+			],
+			[
+				"T",
+				"TASK1__mp3	String"
+			],
+			[
+				"Flxr",
+				"FlxTimer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/PlayState.hx",
+			"settings":
+			{
+				"buffer_size": 2326,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/Player.hx",
+			"settings":
+			{
+				"buffer_size": 3208,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/FlxReplayEx.hx",
+			"settings":
+			{
+				"buffer_size": 5040,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/Reg.hx",
+			"settings":
+			{
+				"buffer_size": 921,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 232.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"crash",
+			"log",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Projects/timetatics/Replay",
+		"/D/Projects/timetatics/Replay/assets",
+		"/D/Projects/timetatics/Replay/source",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay"
+	],
+	"file_history":
+	[
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxG.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/input/keyboard/FlxKeyboard.hx",
+		"/D/Projects/timetatics/Replay/source/FlxReplayEx.hx",
+		"/D/Projects/timetatics/Replay/source/replayEx/MouseRecordEx.hx",
+		"/D/Projects/timetatics/Replay/source/replayEx/FrameRecordEx.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/FlxReplay.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/FrameRecord.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/CodeValuePair.hx",
+		"/D/Projects/timetatics/Replay/source/replayEx/FlxReplayEx.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/frontEnds/VCRFrontEnd.hx",
+		"/D/Projects/timetatics/Replay/source/Main.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
+		"/D/Projects/timetatics/Replay/Project.xml",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxObject.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/interfaces/IFlxSprite.hx",
+		"/D/Projects/timetatics/Replay/source/ReplayData.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxVector.hx",
+		"/D/Projects/HtMtG/game/default/source/Main.hx",
+		"/D/Projects/HtMtG/game/default/Project.xml",
+		"/D/Projects/HtMtG/game/default/source/PlayState.hx",
+		"/D/Projects/HtMtG/game/default/source/Const.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxPoint.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxRandom.hx",
+		"/D/Projects/timetatics/Replay/source/Reg.hx",
+		"/D/Projects/timetatics/Replay/source/replayEx/CodeValuePairEx.hx",
+		"/D/Projects/timetatics/OLD/game/timewarp brawl/timewarp/gameView.lua",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/debug/VCR.hx",
+		"/D/Projects/timetatics/Replay/source/VCRFrontEndEx.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxGame.hx",
+		"/D/Projects/timetatics/Replay/Replay.hxproj",
+		"/C/Users/XX/Desktop/win64/sir_v1/SaveGames/ControlOptions.xml",
+		"/C/Users/XX/Desktop/win64/sir_v1/SaveGames/World1/Static_Content/CentreRegions.xml",
+		"/C/Users/XX/Desktop/win64/sir_v1/SaveGames/World1/Dynamic_Content/CentreInv.xml",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/themes/ee/css/basic.css",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/posts/edit.php",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/posts/add.php",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/js/tinymce.js",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/libraries/tinymce/tinymce.min.js",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/libraries/tinymce/license.txt",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/libraries/tinymce/plugins/spellchecker/plugin.min.js",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/themes/ee/article.php",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/libraries/tinymce/plugins/media/plugin.min.js",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/libraries/tinymce/plugins/image/plugin.min.js",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/config/db.php",
+		"/C/Users/XX/AppData/Local/Temp/7zOC1FC586C/session.php",
+		"/C/Users/XX/AppData/Local/Temp/7zOC1F3256C/migrations.php",
+		"/C/Users/XX/AppData/Local/Temp/7zOC1FF437C/error.php",
+		"/C/Users/XX/Desktop/projects/unity/replay/Assets/EZReplayManager/extension/scripts/EZReplayManagerDemo.dll.meta",
+		"/C/Users/XX/AppData/Local/Temp/7zOC1F5572C/aliases.php",
+		"/C/Users/XX/AppData/Local/Temp/7zOC1FFAB1C/app.php",
+		"/E/Projects/starlight all/thom cyberpunk game/gamefiles/timetatics/recordPlayer.lua",
+		"/E/Projects/starlight all/thom cyberpunk game/gamefiles/timetatics/zoetrope/utils/recorder.lua",
+		"/C/Users/XX/AppData/Local/Google/Chrome/User Data/Default/Local Storage/http_tomato-timer.com_0.localstorage",
+		"/C/Users/XX/AppData/Local/Programs/Common/Microsoft/Visual C++ for Python/9.0/WinSDK/Include/TOM.h",
+		"/E/SORT/#3935800.xml",
+		"/E/SORT/Projects and files/Setup/Disk1/setup.ini",
+		"/C/Users/XX/Desktop/GoJS-master/extensions/LinkLabelDragging.html",
+		"/C/Users/XX/Desktop/GoJS-master/samples/updateDemo.html",
+		"/C/Users/XX/Desktop/GoJS-master/samples/angular.html",
+		"/C/Users/XX/Desktop/GoJS-master/extensions/Robot.js",
+		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Packet.js",
+		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Nic.js",
+		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Server.js",
+		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/app.js",
+		"/C/Users/XX/Documents/GitHub/NetworkGame/index.html",
+		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/app.js",
+		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/cytoscapeCtrl.js",
+		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/index.html",
+		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/cytoscapeDirective.js",
+		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery/jquery.min.js",
+		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery-livequery/test/jquery.js",
+		"/C/Users/XX/Desktop/jquery.minq.js",
+		"/C/Users/XX/Desktop/jquery.min.js",
+		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery-metadata/test/jquery.js",
+		"/C/Users/XX/Desktop/jquery.min (2).js",
+		"/C/Users/XX/Desktop/jquery.min (1).js",
+		"/C/Users/XX/Desktop/jquery.js",
+		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Software.js",
+		"/C/Users/XX/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/conf.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/console.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/sick.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/main.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/typer.lua",
+		"/C/Users/XX/AppData/Local/Temp/d91cd8e2-77ca-4466-889f-fee15fd31b01/public_html/anchor/views/posts/edit.php",
+		"/C/Users/XX/AppData/Local/Temp/d91cd8e2-77ca-4466-889f-fee15fd31b01/public_html/anchor/views/assets/js/tinymce.js",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/screens.lua",
+		"/C/Users/XX/AppData/Local/Temp/d91cd8e2-77ca-4466-889f-fee15fd31b01/public_html/anchor/views/assets/libraries/filemanager/config/config.php",
+		"/C/Users/XX/AppData/Local/Temp/b9a13063-8c04-4039-bc73-dff99db625a5/htdocs/anchor/views/assets/libraries/filemanager/config/config.php",
+		"/C/Users/XX/AppData/Local/Temp/b9a13063-8c04-4039-bc73-dff99db625a5/htdocs/anchor/views/assets/js/tinymce.js",
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/anchor/views/assets/libraries/filemanager/config/config.php",
+		"/C/Users/XX/AppData/Local/Temp/d91cd8e2-77ca-4466-889f-fee15fd31b01/public_html/anchor/views/assets/js/fancybox.js",
+		"/C/Users/XX/Downloads/Felicia Day - You're Never Weird on the Internet (Almost)- A Memoir (retail) (epub)/Felicia Day - You're Never Weird on the Internet (Almost)- A Memoir (retail) (epub).epub",
+		"/C/Users/XX/AppData/LocalLow/SUPERHOT beta/SUPERHOT beta/super.hot",
+		"/C/Users/XX/AppData/Roaming/corz/ffe/ffe.ini",
+		"/C/Users/XX/Downloads/SUPERHOT.Beta.v01.08.2015/SUPERHOT.Beta.v01.08.2015/codex.ini",
+		"/C/Users/XX/AppData/Roaming/Steam/CODEX/335090/leaderboards.ini",
+		"/C/Users/XX/AppData/Roaming/Steam/CODEX/335090/achievements.ini",
+		"/C/Users/XX/Desktop/love-dist-master/with lock/64/game files/AutoHotkey.ahk",
+		"/C/Users/XX/Desktop/love-dist-master/with lock/32/game files/AutoHotkey.ahk",
+		"/C/Users/XX/Desktop/love-dist-master/64/release/screens.lua",
+		"/C/Users/XX/Desktop/love-dist-master/32/release/screens.lua",
+		"/C/Users/XX/Desktop/love-dist-master/64/release/conf.lua",
+		"/C/Users/XX/Desktop/love-dist-master/32/release/conf.lua",
+		"/C/Users/XX/Desktop/love-dist-master/32/hacker/conf.lua",
+		"/C/Users/XX/AppData/Local/Temp/7zO4FCB9CBD/main.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/media/infowindow4.png",
+		"/C/Users/XX/Downloads/sick.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/cron.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker 6/screens.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker 6/console.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker 6/typer.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker 6/main.lua",
+		"/C/Users/XX/Desktop/projects/HtMtG/hacker 6/trace.lua",
+		"/C/Users/XX/Desktop/projects/starlight all/starlight/cyberpunktest/source/mainViews/CpuOsState.hx",
+		"/C/Users/XX/Desktop/projects/HtMtG/game/default/source/TextState.hx",
+		"/C/Users/XX/Desktop/projects/HtMtG/game/default/source/Reg.hx",
+		"/C/Users/XX/Desktop/projects/HtMtG/game/default/source/InterState.hx",
+		"/C/Users/XX/Desktop/projects/HtMtG/game/default/source/LevelState.hx",
+		"/C/Users/XX/Desktop/projects/HtMtG/game/default/source/Main.hx",
+		"/C/Users/XX/Desktop/projects/HtMtG/game/default/Project.xml",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,8/flixel/util/FlxMath.hx",
+		"/C/Users/XX/Desktop/resize.php",
+		"/C/Users/XX/AppData/Local/Temp/7zO4DC9E018/php_image_magician.php",
+		"/C/Users/XX/Downloads/upload.php",
+		"/C/Users/XX/AppData/Local/Temp/7zO8A04ECBF/1.2_resize_advanced.php",
+		"/C/Users/XX/AppData/Local/Temp/7zO8A0B4845/15.1_chaining_(reset).php",
+		"/C/Users/XX/AppData/Local/Temp/7zO8A0200E4/14.1_upload.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"C:\\Users\\XX\\Documents\\My Web Sites\\EE",
+			"<project>",
+			"C:\\Users\\XX\\Desktop\\projects\\starlight live\\source",
+			"/home/lifo/Documents/Projects/Haxe/starlight/cyberpunktest",
+			"<project>",
+			"/home/lifo/Downloads/HaxeFlixel-RPG-master",
+			"/usr/lib/haxe",
+			"/usr/lib/haxe/lib/flixel/3,3,5/flixel"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mouseRecord",
+			"MouseRecord",
+			"mouseRecord",
+			"MouseRecord",
+			"MouseRecordEx",
+			"FrameRecordEx",
+			"framerecord",
+			"MouseRecord",
+			"recor",
+			"FlxReplayEx",
+			"CodeValuePair",
+			"trace",
+			"restartGame",
+			"init",
+			"trace",
+			"playNextFrame",
+			"time",
+			"isReadyToPunch",
+			"Jump",
+			"jump",
+			"FlxButton",
+			"gibs",
+			"_jumpPower",
+			"isReadyToJump",
+			"flick",
+			"shoot",
+			"mouse",
+			"cur",
+			"CodeValuePairEx",
+			"FrameRecord",
+			"CodeValuePair",
+			"mouse",
+			"frameRecord",
+			"FrameRecord",
+			"frameRecord",
+			"FrameRecord",
+			"frameRecord",
+			"FrameRecord",
+			"frameRecord",
+			"FrameRecord",
+			"frameRecord",
+			"FrameRecord",
+			"start_record",
+			"keys",
+			"vcr",
+			"VCRFrontEnd",
+			"FlxG.vcr",
+			"DEFAULT_FILE_NAME",
+			"_cursor",
+			"f()",
+			"constrain",
+			"Mines_ClubDot",
+			"PoliceOfficeInterior",
+			"\n",
+			"_locker",
+			"_inventory",
+			"PlayWife_inventory",
+			"mydiagram",
+			"addNodeAndLink",
+			"nodeDataArray",
+			"new node",
+			"newnode",
+			"label",
+			"key",
+			"nameStr",
+			"model",
+			"click",
+			"Otype",
+			"green",
+			"toJson",
+			"model",
+			"LinkingTool",
+			"direction",
+			"link",
+			"getName",
+			"each",
+			"listConnectedServers",
+			"transferPacketToCache",
+			"packetCache",
+			"each",
+			"packetCachce",
+			" \n\nUpdate	Next Day\nIn Stock",
+			"Remove item|Move to saved list",
+			"\\n",
+			"vers",
+			"\\n",
+			"10",
+			"console.",
+			"console.pri",
+			"score",
+			"\"end\"",
+			"reset",
+			"lose",
+			"currentlevel",
+			"fadeToBlack",
+			"playerName",
+			"for",
+			"340",
+			"200",
+			"20",
+			"= ",
+			"draw",
+			"con",
+			"font",
+			"score",
+			"scorescreen",
+			"player",
+			"final",
+			"playerscore",
+			"towtimer",
+			"towTimer",
+			"timelimit",
+			"towTimer",
+			"reset",
+			"timer2",
+			"timer",
+			"timelimit",
+			"timer",
+			"load",
+			"\")",
+			"score",
+			"]..\"-\"..",
+			"].)..'",
+			"greyout",
+			"IMGinfowindow4",
+			"height",
+			"accessgranted",
+			"acces"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\",\"",
+			"",
+			"\n",
+			"\\\"",
+			"\\$",
+			"\\'",
+			"\\`",
+			"\\n",
+			"\n",
+			"\\n",
+			"\\n\n",
+			"\n",
+			"console",
+			"Reg.letterCoords",
+			"Reg.negKeyList",
+			"_lastLetter",
+			"\n\n",
+			"= [",
+			"",
+			"__png",
+			");",
+			".loadGraphic(AssetPaths.",
+			"FlxExtendedSpriteMMZ",
+			"FlxMouseControlMMZ",
+			"",
+			"    <div class=\"col-md-3\">",
+			"<div class=\"col-md-3\">",
+			"col-md-3",
+			"\",\"",
+			",",
+			"",
+			"	 		 		 		 	",
+			"FlxItemLauncher",
+			"",
+			"ogg",
+			".mp3",
+			" = FlxG.sound.load",
+			"__mp3",
+			"\"",
+			"killjoy",
+			"Prompt",
+			"",
+			" ",
+			"_pressX",
+			"0,",
+			"0",
+			"timer",
+			"text",
+			"",
+			"text",
+			"",
+			"<category domain=\"post_tag\" nicename=\"fn1\"><![CDATA[fn1]]></category>\n		<category domain=\"category\" nicename=\"freens-neeburs\"><![CDATA[Freens &amp; Neeburs]]></category>",
+			"<category domain=\"post_tag\" nicename=\"rw2\"><![CDATA[rw2]]></category>\n		<category domain=\"category\" nicename=\"real-weddings\"><![CDATA[Real Weddings]]></category>",
+			"<category domain=\"post_tag\" nicename=\"rw1\"><![CDATA[rw1]]></category>\n		<category domain=\"category\" nicename=\"real-weddings\"><![CDATA[Real Weddings]]></category>",
+			"<category domain=\"post_tag\" nicename=\"yw2\"><![CDATA[yw2]]></category>\n		<category domain=\"category\" nicename=\"your-wedding\"><![CDATA[Your Wedding]]></category>",
+			"<category domain=\"post_tag\" nicename=\"yw1\"><![CDATA[yw1]]></category>\n		<category domain=\"category\" nicename=\"your-wedding\"><![CDATA[Your Wedding]]></category>",
+			"</category>\n		<category domain=\"post_tag\" nicename=\"4\"><![CDATA[4]]></category>\n		<category",
+			"<category domain=\"post_tag\" nicename=\"4\"><![CDATA[4]]></category>",
+			"<category domain=\"post_tag\" nicename=\"3\"><![CDATA[3]]></category>",
+			"<category domain=\"post_tag\" nicename=\"2\"><![CDATA[2]]></category>",
+			"<category domain=\"post_tag\" nicename=\"1\"><![CDATA[1]]></category>",
+			"<category domain=\"post_tag\" nicename=\"yw1\"><![CDATA[yw1]]></category>",
+			"<category domain=\"post_tag\" nicename=\"1\"><![CDATA[1]]></category>",
+			"<category domain=\"post_tag\" nicename=\"yw2\"><![CDATA[yw2]]></category>\n		<category domain=\"category\" nicename=\"your-wedding\"><![CDATA[Your Wedding]]></category>",
+			"<category domain=\"post_tag\" nicename=\"yw1\"><![CDATA[yw1]]></category>\n		<category domain=\"category\" nicename=\"your-wedding\"><![CDATA[Your Wedding]]></category>",
+			"</category>\n		<category domain=\"post_tag\" nicename=\"yw1\"><![CDATA[yw1]]></category>\n		<category",
+			"</category>\n		<category domain=\"post_tag\" nicename=\"1\"><![CDATA[1]]></category>\n		<category",
+			"<category domain=\"post_tag\" nicename=\"4\"><![CDATA[4]]></category>",
+			"<category domain=\"post_tag\" nicename=\"3\"><![CDATA[3]]></category>",
+			"<category domain=\"post_tag\" nicename=\"2\"><![CDATA[2]]></category>",
+			"<category domain=\"post_tag\" nicename=\"1\"><![CDATA[1]]></category>",
+			"<category domain=\"post_tag\" nicename=\"2\"><![CDATA[2]]></category>",
+			"<category domain=\"post_tag\" nicename=\"2\"><![CDATA[1]]></category>",
+			"category domain",
+			"		<category",
+			"<category domain=\"post_tag\" nicename=\"1\"><![CDATA[1]]></category>\n      <category domain=\"category\" ",
+			"",
+			"<wp:post_type>post</wp:post_type>",
+			",\n",
+			"__",
+			"",
+			"\\n",
+			"NINE",
+			"EIGHT",
+			"SEVEN",
+			"SIX",
+			"FIVE",
+			"FOUR",
+			"THREE",
+			"ONE",
+			"ZERO",
+			"TWO",
+			"ONE",
+			"\",\"",
+			"",
+			"_tween",
+			"_gameState",
+			"\\'",
+			"",
+			"'",
+			"\\'",
+			"\",\n\"",
+			"[0",
+			"[",
+			"cpuStartView",
+			"CpuStartView",
+			"roomViewOverlay.",
+			"",
+			"__png",
+			"\"linktarget\":\"\"},\n",
+			"",
+			"}",
+			"{",
+			"\n<div class=\"wslide-slide\"",
+			"",
+			"http://www.bartkira.com/uploads/",
+			"",
+			"\n<div class=\"wslide-slide\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/PlayState.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1960,
+								1960
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 772.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/Player.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1592,
+								1592
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"open_with_edit": true,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1389.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/FlxReplayEx.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4201,
+								4201
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3876.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/Reg.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 126.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 213.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Replay.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

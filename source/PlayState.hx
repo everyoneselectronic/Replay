@@ -9,7 +9,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxPoint;
 import openfl.Assets;
 
-// import flixel.system.replay.FlxReplay;
+import flixel.system.replay.FlxReplay;
 import flixel.util.FlxRandom;
 import flixel.util.FlxTimer;
 
@@ -34,11 +34,11 @@ class PlayState extends FlxState
 	/**
 	 * The blue block player controls
 	 */
-	private var _player:FlxSprite;
 
+	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
 
-	private var _vcr:FlxReplayEx;
+	private var _vcr:FlxReplay;
 
 	private var _roundTimer:FlxTimer;
 	private var _roundTime:Float = 5.0;
@@ -59,28 +59,39 @@ class PlayState extends FlxState
 		Reg.level++;
 		trace(Reg.level);
 
-		_vcr = new FlxReplayEx();
+		_vcr = new FlxReplay();
 
 		if (!(Reg.level%2 == 0)) {
 			_vcr.create(FlxRandom.globalSeed);
 			recording = true;
-			trace("recording");
 
-			_player = new Player(30, 200);
-			add(_player);
+			_currentPlayers = new FlxSpriteGroup();
+				// player 0
+				var player = new Player(100, 200, 0);
+				_currentPlayers.add(player);
+
+				//  player 1
+				var player = new Player(900, 200, 1);
+				_currentPlayers.add(player);
+
+			add(_currentPlayers);
+
 
 		}
 		else
 		{
 			replaying = true;
 			_vcr.load(ReplayData.replays[0]);
-			trace("playing");
-			trace(ReplayData.replays[0]);
+			// trace("playing");
+			// trace(ReplayData.replays[0]);
 
 			_recorderPlayers = new FlxSpriteGroup();
 
-			for (replay in ReplayData.replays) {
-				var player = new Player(30, 200, true, replay);
+			for (i in 0...ReplayData.replays.length)
+			{
+				var player = new Player(100, 200, 0, true, i, ReplayData.replays[i]);
+				_recorderPlayers.add(player);
+				var player = new Player(900, 200, 1, true, i, ReplayData.replays[i]);
 				_recorderPlayers.add(player);
 			}
 
@@ -92,7 +103,7 @@ class PlayState extends FlxState
 	
 	override public function update():Void
 	{
-		FlxG.collide(_tilemap, _player);
+		FlxG.collide(_tilemap, _currentPlayers);
 		FlxG.collide(_tilemap, _recorderPlayers);
 
 		if (_startGame)
@@ -100,13 +111,13 @@ class PlayState extends FlxState
 			if (recording) {
 				_vcr.recordFrame();
 			}
-			else if (replaying)
-			{
-				// if (!_vcr.finished)
-				// {
-				// 	_vcr.playNextFrame();
-				// }
-			}
+			// else if (replaying)
+			// {
+			// 	// if (!_vcr.finished)
+			// 	// {
+			// 	// 	_vcr.playNextFrame();
+			// 	// }
+			// }
 
 		}
 		else {
