@@ -190,7 +190,7 @@ class FlxReplayEx
 	 */
 	public function playNextFrame():FrameRecord
 	{
-		FlxG.inputs.reset();
+		// FlxG.inputs.reset();
 		
 		if (_marker >= frameCount)
 		{

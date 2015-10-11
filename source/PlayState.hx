@@ -9,7 +9,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxPoint;
 import openfl.Assets;
 
-import flixel.system.replay.FlxReplay;
 import flixel.util.FlxRandom;
 import flixel.util.FlxTimer;
 
@@ -38,7 +37,7 @@ class PlayState extends FlxState
 	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
 
-	private var _vcr:FlxReplay;
+	private var _vcr:FlxReplayEx;
 
 	private var _roundTimer:FlxTimer;
 	private var _roundTime:Float = 5.0;
@@ -59,8 +58,8 @@ class PlayState extends FlxState
 		
 		trace(Reg.level);
 
-		// _vcr = new FlxReplay();
-		// _vcr.create(FlxRandom.globalSeed);
+		_vcr = new FlxReplayEx();
+		_vcr.create(FlxRandom.globalSeed);
 
 		// current players
 		_currentPlayers = new FlxSpriteGroup();
@@ -104,7 +103,7 @@ class PlayState extends FlxState
 
 		if (_startGame)
 		{
-			// _vcr.recordFrame();
+			_vcr.recordFrame();
 		}
 		else {
 			FlxG.resetState();
@@ -115,7 +114,7 @@ class PlayState extends FlxState
 
 	private function restartGame(Timer:FlxTimer):Void
 	{
-		// ReplayData.replays.push(_vcr.save());
+		ReplayData.replays.push(_vcr.save());
 		Reg.level++;
 		_startGame = false;
 	}

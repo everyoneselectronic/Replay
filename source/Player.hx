@@ -9,7 +9,6 @@ import flixel.util.FlxSpriteUtil;
 import flixel.util.FlxTimer;
 import flixel.util.FlxRandom;
 
-import flixel.system.replay.FlxReplay;
 import flixel.system.replay.FrameRecord;
 import flixel.system.replay.CodeValuePair;
 
@@ -49,17 +48,18 @@ class Player extends FlxSprite
 	{
 		super(X, Y);
 
-		_vcr = new FlxReplayEx();
+		
 
 		_isReplay = isReplay;
 
 		if (_isReplay) {
+			_vcr = new FlxReplayEx();
 			_replayData = replayData;
 			_vcr.load(replayData);
 		}
 		else
 		{
-			_vcr.create(FlxRandom.globalSeed);
+			// _vcr.create(FlxRandom.globalSeed);
 		}
 
 		_playerNumber = playerNumber;
@@ -112,11 +112,11 @@ class Player extends FlxSprite
 	
 	override public function destroy():Void
 	{
-		if (_playerNumber == 0 && !_isReplay)
-		{
-			ReplayData.replays.push(_vcr.save());
-			trace("replay data saved");
-		}
+		// if (_playerNumber == 0 && !_isReplay)
+		// {
+		// 	ReplayData.replays.push(_vcr.save());
+		// 	trace("replay data saved");
+		// }
 		super.destroy();
 	}
 	
@@ -131,11 +131,6 @@ class Player extends FlxSprite
 			{
 				var frameRecord:FrameRecord = _vcr.playNextFrame();
 
-				if (frameRecord != null)
-				{
-					trace(frameRecord.keys);
-				}
-
 				var LEFT:Bool = false;
 				var	RIGHT:Bool = false;
 				var	UP:Bool = false;
@@ -147,7 +142,7 @@ class Player extends FlxSprite
 					if (frameRecord.keys != null)
 					{
 
-						trace(frameRecord.keys);
+						// trace(frameRecord.keys);
 
 						for (k in frameRecord.keys)
 						{
@@ -204,7 +199,7 @@ class Player extends FlxSprite
 		}
 		else
 		{
-			_vcr.recordFrame();
+			// _vcr.recordFrame();
 
 			if (FlxG.keys.anyPressed([_LEFT]))
 			{
