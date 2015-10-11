@@ -188,18 +188,18 @@ class FlxReplayEx
 	/**
 	 * Get the current frame record data and load it into the input managers.
 	 */
-	public function playNextFrame():Void
+	public function playNextFrame():FrameRecord
 	{
 		FlxG.inputs.reset();
 		
 		if (_marker >= frameCount)
 		{
 			finished = true;
-			return;
+			return null;
 		}
 		if (_frames[_marker].frame != frame++)
 		{
-			return;
+			return null;
 		}
 		
 		var fr:FrameRecord = _frames[_marker++];
@@ -207,16 +207,19 @@ class FlxReplayEx
 		#if !FLX_NO_KEYBOARD
 		if (fr.keys != null)
 		{
-			FlxG.keys.playback(fr.keys);
+			// trace(fr.keys);
+			// FlxG.keys.playback(fr.keys);
 		}
 		#end
 		
 		#if !FLX_NO_MOUSE
 		if (fr.mouse != null)
 		{
-			FlxG.mouse.playback(fr.mouse);
+			// FlxG.mouse.playback(fr.mouse);
 		}
 		#end
+		
+		return fr;
 	}
 	
 	/**

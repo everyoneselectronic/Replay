@@ -56,46 +56,42 @@ class PlayState extends FlxState
 
 		_roundTimer = new FlxTimer(_roundTime, restartGame, 1);
 		
-		Reg.level++;
+		
 		trace(Reg.level);
 
-		_vcr = new FlxReplay();
+		// _vcr = new FlxReplay();
+		// _vcr.create(FlxRandom.globalSeed);
 
-		if (!(Reg.level%2 == 0)) {
-			_vcr.create(FlxRandom.globalSeed);
-			recording = true;
+		// current players
+		_currentPlayers = new FlxSpriteGroup();
+			// player 0
+			var player = new Player(100, 200, 0);
+			_currentPlayers.add(player);
 
-			_currentPlayers = new FlxSpriteGroup();
-				// player 0
-				var player = new Player(100, 200, 0);
-				_currentPlayers.add(player);
+			//  player 1
+			var player = new Player(900, 200, 1);
+			_currentPlayers.add(player);
 
-				//  player 1
-				var player = new Player(900, 200, 1);
-				_currentPlayers.add(player);
+		add(_currentPlayers);
+		trace("C- " + _currentPlayers.members.length);
 
-			add(_currentPlayers);
-
-
-		}
-		else
+		if (ReplayData.replays.length > 0)
 		{
-			replaying = true;
-			_vcr.load(ReplayData.replays[0]);
+			// _vcr.load(ReplayData.replays[0]);
 			// trace("playing");
 			// trace(ReplayData.replays[0]);
 
+			// add recored players
 			_recorderPlayers = new FlxSpriteGroup();
-
-			for (i in 0...ReplayData.replays.length)
-			{
-				var player = new Player(100, 200, 0, true, i, ReplayData.replays[i]);
-				_recorderPlayers.add(player);
-				var player = new Player(900, 200, 1, true, i, ReplayData.replays[i]);
-				_recorderPlayers.add(player);
-			}
-
+				for (i in 0...ReplayData.replays.length)
+				{
+					var player = new Player(100, 200, 0, true, i, ReplayData.replays[i]);
+					_recorderPlayers.add(player);
+					var player = new Player(900, 200, 1, true, i, ReplayData.replays[i]);
+					_recorderPlayers.add(player);
+				}
 			add(_recorderPlayers);
+			trace("R- " + _recorderPlayers.members.length);
 		}
 		
 		super.create();
@@ -108,17 +104,7 @@ class PlayState extends FlxState
 
 		if (_startGame)
 		{
-			if (recording) {
-				_vcr.recordFrame();
-			}
-			// else if (replaying)
-			// {
-			// 	// if (!_vcr.finished)
-			// 	// {
-			// 	// 	_vcr.playNextFrame();
-			// 	// }
-			// }
-
+			// _vcr.recordFrame();
 		}
 		else {
 			FlxG.resetState();
@@ -129,7 +115,8 @@ class PlayState extends FlxState
 
 	private function restartGame(Timer:FlxTimer):Void
 	{
-		ReplayData.replays.push(_vcr.save());
+		// ReplayData.replays.push(_vcr.save());
+		Reg.level++;
 		_startGame = false;
 	}
 }

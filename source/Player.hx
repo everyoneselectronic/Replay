@@ -9,6 +9,10 @@ import flixel.util.FlxSpriteUtil;
 import flixel.util.FlxTimer;
 import flixel.util.FlxRandom;
 
+import flixel.system.replay.FlxReplay;
+import flixel.system.replay.FrameRecord;
+import flixel.system.replay.CodeValuePair;
+
 class Player extends FlxSprite
 {
 	static private var OFFSET:Int = 16;
@@ -45,12 +49,17 @@ class Player extends FlxSprite
 	{
 		super(X, Y);
 
+		_vcr = new FlxReplayEx();
+
 		_isReplay = isReplay;
 
 		if (_isReplay) {
 			_replayData = replayData;
-			_vcr = new FlxReplayEx();
 			_vcr.load(replayData);
+		}
+		else
+		{
+			_vcr.create(FlxRandom.globalSeed);
 		}
 
 		_playerNumber = playerNumber;
@@ -103,6 +112,11 @@ class Player extends FlxSprite
 	
 	override public function destroy():Void
 	{
+		if (_playerNumber == 0 && !_isReplay)
+		{
+			ReplayData.replays.push(_vcr.save());
+			trace("replay data saved");
+		}
 		super.destroy();
 	}
 	
@@ -113,35 +127,111 @@ class Player extends FlxSprite
 
 		if (_isReplay)
 		{
-			if (!_vcr.finished) {
-				_vcr.playNextFrame();
+			if (!_vcr.finished)
+			{
+				var frameRecord:FrameRecord = _vcr.playNextFrame();
+
+				if (frameRecord != null)
+				{
+					trace(frameRecord.keys);
+				}
+
+				var LEFT:Bool = false;
+				var	RIGHT:Bool = false;
+				var	UP:Bool = false;
+				var	DOWN:Bool = false;
+				var PUNCH:Bool = false;
+
+				if (frameRecord != null)
+				{
+					if (frameRecord.keys != null)
+					{
+
+						trace(frameRecord.keys);
+
+						for (k in frameRecord.keys)
+						{
+							if (k.code == FlxG.keys.getKeyCode(_LEFT))
+							{
+								LEFT = true;
+							}
+							else if (k.code == FlxG.keys.getKeyCode(_RIGHT))
+							{
+								RIGHT = true;
+							}
+							else if (k.code == FlxG.keys.getKeyCode(_UP))
+							{
+								UP = true;
+							}
+							else if (k.code == FlxG.keys.getKeyCode(_DOWN))
+							{
+								DOWN = true;
+							}
+							else if (k.code == FlxG.keys.getKeyCode(_PUNCH))
+							{
+								PUNCH = true;
+							}
+						}
+
+						if (LEFT)
+						{
+							moveLeft();
+						}
+						else if (RIGHT)
+						{
+							moveRight();
+						}
+
+						_aim = facing;
+
+						if (UP)
+						{
+							moveUp();
+						}
+						else if (DOWN)
+						{
+							moveDown();
+						}
+						
+						// PUNCH
+						if (PUNCH)
+						{
+							punch();
+						}
+					}
+				}
 			}
 		}
+		else
+		{
+			_vcr.recordFrame();
 
-		if (FlxG.keys.anyPressed([_LEFT]))
-		{
-			moveLeft();
-		}
-		else if (FlxG.keys.anyPressed([_RIGHT]))
-		{
-			moveRight();
-		}
+			if (FlxG.keys.anyPressed([_LEFT]))
+			{
+				moveLeft();
+			}
+			else if (FlxG.keys.anyPressed([_RIGHT]))
+			{
+				moveRight();
+			}
 
-		_aim = facing;
+			_aim = facing;
 
-		if (FlxG.keys.anyPressed([_UP]))
-		{
-			moveUp();
-		}
-		else if (FlxG.keys.anyPressed([_DOWN]))
-		{
-			moveDown();
-		}
-		
-		// PUNCH
-		if (FlxG.keys.anyPressed([_PUNCH]))
-		{
-			punch();
+			if (FlxG.keys.anyPressed([_UP]))
+			{
+				moveUp();
+			}
+			else if (FlxG.keys.anyPressed([_DOWN]))
+			{
+				moveDown();
+			}
+			
+			// PUNCH
+			if (FlxG.keys.anyPressed([_PUNCH]))
+			{
+				punch();
+			}
+
 		}
 		
         super.update();
