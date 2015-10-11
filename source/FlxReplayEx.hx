@@ -207,7 +207,6 @@ class FlxReplayEx
 		#if !FLX_NO_KEYBOARD
 		if (fr.keys != null)
 		{
-			// trace(fr.keys);
 			// FlxG.keys.playback(fr.keys);
 		}
 		#end
@@ -218,7 +217,7 @@ class FlxReplayEx
 			// FlxG.mouse.playback(fr.mouse);
 		}
 		#end
-		
+
 		return fr;
 	}
 	

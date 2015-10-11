@@ -35,9 +35,12 @@ class Player extends FlxSprite
 	private var SPRITE_CARRY:String;
 	private var SPRITE_UP:String;
 
-	private var punchTimer:FlxTimer;
-	private var isPunching:Bool = false;
-	private var canPunch:Bool = true;
+	private var _punchTimer:FlxTimer;
+	private var _punchRate:Float = 0.2;
+	private var _isPunching:Bool = false;
+	private var _canPunch:Bool = true;
+
+	private var _punchDebounce:Bool = true;
 
 	/**
 	 * This is the player object class.  Most of the comments I would put in here
@@ -112,11 +115,6 @@ class Player extends FlxSprite
 	
 	override public function destroy():Void
 	{
-		// if (_playerNumber == 0 && !_isReplay)
-		// {
-		// 	ReplayData.replays.push(_vcr.save());
-		// 	trace("replay data saved");
-		// }
 		super.destroy();
 	}
 	
@@ -125,11 +123,13 @@ class Player extends FlxSprite
 		acceleration.x = 0;
 		acceleration.y = 0;
 
-		if (_isReplay)
+		if (_isReplay) // recorded players
 		{
 			if (!_vcr.finished)
 			{
 				var frameRecord:FrameRecord = _vcr.playNextFrame();
+
+				// trace(frameRecord);
 
 				var LEFT:Bool = false;
 				var	RIGHT:Bool = false;
@@ -137,69 +137,101 @@ class Player extends FlxSprite
 				var	DOWN:Bool = false;
 				var PUNCH:Bool = false;
 
+				// punch debounce
+				if (frameRecord == null)
+				{
+					_punchDebounce = true;
+				}
+
+				if (frameRecord != null)
+				{
+					if (frameRecord.keys == null)
+					{
+						_punchDebounce = true;
+					}
+				}
+
 				if (frameRecord != null)
 				{
 					if (frameRecord.keys != null)
 					{
+						var p:Bool = true;
 
-						// trace(frameRecord.keys);
+						for (k in frameRecord.keys)
+						{
+							if (k.code == FlxG.keys.getKeyCode(_PUNCH))
+							{
+								p = false;
+							}
+						}
+						if (p)
+						{
+							_punchDebounce = true;
+						}
+					}
+				}
 
+
+				if (frameRecord != null)
+				{
+					if (frameRecord.keys != null)
+					{
 						for (k in frameRecord.keys)
 						{
 							if (k.code == FlxG.keys.getKeyCode(_LEFT))
 							{
 								LEFT = true;
 							}
-							else if (k.code == FlxG.keys.getKeyCode(_RIGHT))
+							if (k.code == FlxG.keys.getKeyCode(_RIGHT))
 							{
 								RIGHT = true;
 							}
-							else if (k.code == FlxG.keys.getKeyCode(_UP))
+							if (k.code == FlxG.keys.getKeyCode(_UP))
 							{
 								UP = true;
 							}
-							else if (k.code == FlxG.keys.getKeyCode(_DOWN))
+							if (k.code == FlxG.keys.getKeyCode(_DOWN))
 							{
 								DOWN = true;
 							}
-							else if (k.code == FlxG.keys.getKeyCode(_PUNCH))
+							if (k.code == FlxG.keys.getKeyCode(_PUNCH))
 							{
 								PUNCH = true;
 							}
 						}
-
-						if (LEFT)
-						{
-							moveLeft();
-						}
-						else if (RIGHT)
-						{
-							moveRight();
-						}
-
-						_aim = facing;
-
-						if (UP)
-						{
-							moveUp();
-						}
-						else if (DOWN)
-						{
-							moveDown();
-						}
-						
-						// PUNCH
-						if (PUNCH)
-						{
-							punch();
-						}
 					}
+				}
+
+				if (LEFT)
+				{
+					moveLeft();
+				}
+				else if (RIGHT)
+				{
+					moveRight();
+				}
+
+				_aim = facing;
+
+				if (UP)
+				{
+					moveUp();
+				}
+				else if (DOWN)
+				{
+					moveDown();
+				}
+				
+				// PUNCH
+				if (PUNCH && _punchDebounce)
+				{
+					_punchDebounce = false;
+					punch();
 				}
 			}
 		}
-		else
+		else // current players
 		{
-			// _vcr.recordFrame();
 
 			if (FlxG.keys.anyPressed([_LEFT]))
 			{
@@ -222,7 +254,7 @@ class Player extends FlxSprite
 			}
 			
 			// PUNCH
-			if (FlxG.keys.anyPressed([_PUNCH]))
+			if (FlxG.keys.anyJustPressed([_PUNCH]))
 			{
 				punch();
 			}
@@ -257,7 +289,6 @@ class Player extends FlxSprite
 		}
 		facing = FlxObject.LEFT;
 		acceleration.x -= drag.x;
-		
 	}
 	
 	function moveRight():Void
@@ -267,7 +298,6 @@ class Player extends FlxSprite
 		}
 		facing = FlxObject.RIGHT;
 		acceleration.x += drag.x;
-		
 	}
 	
 	function moveUp():Void
@@ -281,9 +311,43 @@ class Player extends FlxSprite
 	}
 	
 	function punch():Void
-	{
-		// FlxG.sound.play("Punch");
-		loadGraphic(SPRITE_PUNCH, false, 80, 104);
+	{	
+		if (_canPunch)
+		{
+			trace("punch");
+			_isPunching = true;
+			_canPunch = false;
 
+			_punchTimer = new FlxTimer(_punchRate, resetPunch, 1);
+
+			loadGraphic(SPRITE_PUNCH, false, 80, 104);
+			// FlxG.sound.play("Punch");
+		}
+	}
+
+	function resetPunch(Timer:FlxTimer):Void
+	{
+		_isPunching = false;
+		_canPunch = true;
+
+		loadGraphic(SPRITE_DOWN, false, 80, 104);
+	}
+
+	function pickUpTTD():Void
+	{
+		// can pucnch timer if running
+		if (_punchTimer.active)
+		{
+			_punchTimer.cancel();
+		}
+		_isPunching = false;
+		_canPunch = false;
+	}
+
+	function dropTTD():Void
+	{
+		// reset
+		_isPunching = false;
+		_canPunch = false;
 	}
 }

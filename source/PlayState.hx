@@ -72,14 +72,9 @@ class PlayState extends FlxState
 			_currentPlayers.add(player);
 
 		add(_currentPlayers);
-		trace("C- " + _currentPlayers.members.length);
 
 		if (ReplayData.replays.length > 0)
 		{
-			// _vcr.load(ReplayData.replays[0]);
-			// trace("playing");
-			// trace(ReplayData.replays[0]);
-
 			// add recored players
 			_recorderPlayers = new FlxSpriteGroup();
 				for (i in 0...ReplayData.replays.length)
@@ -90,7 +85,6 @@ class PlayState extends FlxState
 					_recorderPlayers.add(player);
 				}
 			add(_recorderPlayers);
-			trace("R- " + _recorderPlayers.members.length);
 		}
 		
 		super.create();
