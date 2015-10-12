@@ -41,7 +41,7 @@ class PlayState extends FlxState
 	private var _vcr:FlxReplayEx;
 
 	private var _roundTimer:FlxTimer;
-	private var _roundTime:Float = 5.0;
+	private var _roundTime:Float = 100.0;
 
 	private var _startGame = true;
 	

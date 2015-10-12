@@ -8,13 +8,15 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxSpriteUtil;
 import flixel.util.FlxTimer;
 import flixel.util.FlxRandom;
+import flixel.util.FlxColor;
 
 import flixel.system.replay.FrameRecord;
 import flixel.system.replay.CodeValuePair;
 
 class Player extends FlxSprite
 {
-	static private var OFFSET:Int = 16;
+	static private var PUNCH_OFFSET:Int = 16;
+	static private var CARRY_OFFSET:Int = 48;
 
 	private var _aim:Int;
 
@@ -39,8 +41,9 @@ class Player extends FlxSprite
 	private var _punchRate:Float = 0.2;
 	private var _isPunching:Bool = false;
 	private var _canPunch:Bool = true;
-
 	private var _punchDebounce:Bool = true;
+
+	private var _carryingTTD:Bool = false;
 
 	/**
 	 * This is the player object class.  Most of the comments I would put in here
@@ -50,8 +53,6 @@ class Player extends FlxSprite
 	public function new(X:Int, Y:Int, playerNumber:Int, ?isReplay:Bool, ?roundNumber:Int, ?replayData:String)
 	{
 		super(X, Y);
-
-		
 
 		_isReplay = isReplay;
 
@@ -67,6 +68,9 @@ class Player extends FlxSprite
 
 		_playerNumber = playerNumber;
 
+		setFacingFlip(FlxObject.LEFT, true, false);
+		setFacingFlip(FlxObject.RIGHT, false, false);
+
 		if (_playerNumber == 0)
 		{
 			_UP = "W";
@@ -79,6 +83,8 @@ class Player extends FlxSprite
 			SPRITE_PUNCH = AssetPaths.sP1_punch__png;
 			SPRITE_CARRY = AssetPaths.sP1_carry0__png;
 			SPRITE_UP = AssetPaths.sP1_carry1__png;
+
+			facing = FlxObject.RIGHT;
 		}
 		else
 		{
@@ -92,17 +98,16 @@ class Player extends FlxSprite
 			SPRITE_PUNCH = AssetPaths.sP2_punch__png;
 			SPRITE_CARRY = AssetPaths.sP2_carry0__png;
 			SPRITE_UP = AssetPaths.sP2_carry1__png;
+
+			facing = FlxObject.LEFT;
 		}
 		
-		loadGraphic(SPRITE_DOWN, false, 80, 104);
-		
-		setFacingFlip(FlxObject.LEFT, true, false);
-		setFacingFlip(FlxObject.RIGHT, false, false);
+		loadGraphic(SPRITE_DOWN);
 		
 		// Bounding box tweaks
-		width = 80;
-		height = 104;
-		// offset.set(1, 1);
+		// width = 80;
+		// height = 104;
+		// PUNCH_offset.set(1, 1);
 		
 		// Basic player physics
 		var runSpeed:Int = 300;
@@ -284,19 +289,35 @@ class Player extends FlxSprite
 	
 	function moveLeft():Void
 	{
-		if (facing == FlxObject.RIGHT){
-			x -= OFFSET;
+		if (_isPunching)
+		{
+			if (facing == FlxObject.RIGHT){
+				x -= PUNCH_OFFSET;
+			}
 		}
-		facing = FlxObject.LEFT;
+
+		if (!_carryingTTD)
+		{
+			facing = FlxObject.LEFT;
+		}
+
 		acceleration.x -= drag.x;
 	}
 	
 	function moveRight():Void
 	{
-		if (facing == FlxObject.LEFT){
-			x += OFFSET;
+		if (_isPunching)
+		{
+			if (facing == FlxObject.LEFT){
+				x += PUNCH_OFFSET;
+			}
 		}
-		facing = FlxObject.RIGHT;
+
+		if (!_carryingTTD)
+		{
+			facing = FlxObject.RIGHT;
+		}
+
 		acceleration.x += drag.x;
 	}
 	
@@ -320,7 +341,12 @@ class Player extends FlxSprite
 
 			_punchTimer = new FlxTimer(_punchRate, resetPunch, 1);
 
-			loadGraphic(SPRITE_PUNCH, false, 80, 104);
+			if (facing == FlxObject.LEFT)
+			{
+					x -= PUNCH_OFFSET;
+			}
+
+			loadGraphic(SPRITE_PUNCH);
 			// FlxG.sound.play("Punch");
 		}
 	}
@@ -330,7 +356,12 @@ class Player extends FlxSprite
 		_isPunching = false;
 		_canPunch = true;
 
-		loadGraphic(SPRITE_DOWN, false, 80, 104);
+		if (facing == FlxObject.LEFT)
+		{
+				x += PUNCH_OFFSET;
+		}
+
+		loadGraphic(SPRITE_DOWN);
 	}
 
 	public function pickUpTTD():Void
@@ -344,16 +375,24 @@ class Player extends FlxSprite
 			}
 		}
 
+		_carryingTTD = true;
 		_isPunching = false;
 		_canPunch = false;
 
-		loadGraphic(SPRITE_CARRY, false, 80, 104);
+		y -= CARRY_OFFSET;
+
+		loadGraphic(SPRITE_CARRY);
 	}
 
 	function dropTTD():Void
 	{
 		// reset
+		_carryingTTD = false;
 		_isPunching = false;
 		_canPunch = false;
+
+		y += CARRY_OFFSET;
+		loadGraphic(SPRITE_DOWN);
+
 	}
 }
