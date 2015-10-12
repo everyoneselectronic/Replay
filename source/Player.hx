@@ -99,11 +99,12 @@ class Player extends FlxSprite
 		setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 		
-		// Bounding box tweaks
-		width = 80;
-		height = 104;
-		// offset.set(1, 1);
-		
+		// Bounding box tweaks - Right Down
+		width = 64;
+		height = 56;
+		offset.x = 0;
+		offset.y = 48;
+
 		// Basic player physics
 		var runSpeed:Int = 300;
 		drag.x = runSpeed * 4;
@@ -285,8 +286,22 @@ class Player extends FlxSprite
 	function moveLeft():Void
 	{
 		if (facing == FlxObject.RIGHT){
-			x -= OFFSET;
+			// Bounding box tweaks - Left Down
+			width = 64;
+			height = 56;
+			offset.x = 16;
+			offset.y = 48;
+
+			// if (_isPunching)
+			// {
+			// 	// Bounding box tweaks - PUNCH
+			// 	width = 80;
+			// 	height = 56;
+			// 	offset.x = 0;
+			// 	offset.y = 48;
+			// }
 		}
+
 		facing = FlxObject.LEFT;
 		acceleration.x -= drag.x;
 	}
@@ -294,7 +309,20 @@ class Player extends FlxSprite
 	function moveRight():Void
 	{
 		if (facing == FlxObject.LEFT){
-			x += OFFSET;
+			// Bounding box tweaks - Right Down
+			width = 64;
+			height = 56;
+			offset.x = 0;
+			offset.y = 48;
+
+			// if (_isPunching)
+			// {
+			// 	// Bounding box tweaks - PUNCH
+			// 	width = 80;
+			// 	height = 56;
+			// 	offset.x = 0;
+			// 	offset.y = 48;
+			// }
 		}
 		facing = FlxObject.RIGHT;
 		acceleration.x += drag.x;
@@ -314,13 +342,20 @@ class Player extends FlxSprite
 	{	
 		if (_canPunch)
 		{
-			trace("punch");
 			_isPunching = true;
 			_canPunch = false;
 
 			_punchTimer = new FlxTimer(_punchRate, resetPunch, 1);
 
 			loadGraphic(SPRITE_PUNCH, false, 80, 104);
+			updateHitbox();
+
+			// Bounding box tweaks - Right Down
+			width = 80;
+			height = 56;
+			offset.x = 0;
+			offset.y = 48;
+
 			// FlxG.sound.play("Punch");
 		}
 	}
@@ -331,17 +366,40 @@ class Player extends FlxSprite
 		_canPunch = true;
 
 		loadGraphic(SPRITE_DOWN, false, 80, 104);
+		updateHitbox();
+
+		if (facing == FlxObject.LEFT)
+		{
+			// Bounding box tweaks - Right Down
+			width = 64;
+			height = 56;
+			offset.x = 0;
+			offset.y = 48;
+		}
+		else
+		{
+			width = 64;
+			height = 56;
+			offset.x = 0;
+			offset.y = 48;
+		}
 	}
 
-	function pickUpTTD():Void
+	public function pickUpTTD():Void
 	{
 		// can pucnch timer if running
-		if (_punchTimer.active)
+		if (_punchTimer != null)
 		{
-			_punchTimer.cancel();
+			if (_punchTimer.active)
+			{
+				_punchTimer.cancel();
+			}
 		}
+
 		_isPunching = false;
 		_canPunch = false;
+
+		loadGraphic(SPRITE_CARRY, false, 80, 104);
 	}
 
 	function dropTTD():Void
