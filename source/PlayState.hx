@@ -37,12 +37,10 @@ class PlayState extends FlxState
 	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
 
-	private var _TTD:FlxSprite;
-
 	private var _vcr:FlxReplayEx;
 
 	private var _roundTimer:FlxTimer;
-	private var _roundTime:Float = 20.0;
+	private var _roundTime:Float = 5.0;
 
 	private var _startGame = true;
 	
@@ -63,11 +61,17 @@ class PlayState extends FlxState
 		_vcr = new FlxReplayEx();
 		_vcr.create(FlxRandom.globalSeed);
 
+		// current players
+		_currentPlayers = new FlxSpriteGroup();
+			// player 0
+			var player = new Player(100, 200, 0);
+			_currentPlayers.add(player);
 
-		// 56,60 size
-		_TTD = new FlxSprite(FlxG.width/2,FlxG.height/2,AssetPaths.ttd__png);
-		add(_TTD);
+			//  player 1
+			var player = new Player(900, 200, 1);
+			_currentPlayers.add(player);
 
+		add(_currentPlayers);
 
 		if (ReplayData.replays.length > 0)
 		{
@@ -82,18 +86,6 @@ class PlayState extends FlxState
 				}
 			add(_recorderPlayers);
 		}
-
-		// current players
-		_currentPlayers = new FlxSpriteGroup();
-			// player 0
-			var player = new Player(100, 200, 0);
-			_currentPlayers.add(player);
-
-			//  player 1
-			var player = new Player(900, 200, 1);
-			_currentPlayers.add(player);
-
-		add(_currentPlayers);
 		
 		super.create();
 	}
@@ -102,10 +94,6 @@ class PlayState extends FlxState
 	{
 		FlxG.collide(_tilemap, _currentPlayers);
 		FlxG.collide(_tilemap, _recorderPlayers);
-
-		// FlxG.overlap(_currentPlayers, checkPlayerPunch);
-
-		FlxG.overlap(_currentPlayers, _TTD, pickUpTTD);
 
 		if (_startGame)
 		{
@@ -123,11 +111,5 @@ class PlayState extends FlxState
 		ReplayData.replays.push(_vcr.save());
 		Reg.level++;
 		_startGame = false;
-	}
-
-	private function pickUpTTD(P:Player, TTD:FlxSprite):Void
-	{
-		P.pickUpTTD();
-		TTD.kill();
 	}
 }

@@ -4,98 +4,6 @@
 		"selected_items":
 		[
 			[
-				"_puc",
-				"_punchTimer	var"
-			],
-			[
-				"Flx",
-				"FlxSprite	flixel"
-			],
-			[
-				"Spre",
-				"Sprite1	var"
-			],
-			[
-				"_",
-				"_TTD"
-			],
-			[
-				"as",
-				"Assets"
-			],
-			[
-				"over",
-				"overlap"
-			],
-			[
-				"in",
-				"indexOf(...)	Int"
-			],
-			[
-				"Puch",
-				"PUNCH	var"
-			],
-			[
-				"_p",
-				"_punchDebounce	var"
-			],
-			[
-				"_puch",
-				"_punchDebounce	var"
-			],
-			[
-				"Right",
-				"RIGHT	var"
-			],
-			[
-				"_is",
-				"_isPunching	var"
-			],
-			[
-				"key",
-				"keyFrame"
-			],
-			[
-				"ke",
-				"keyFrame"
-			],
-			[
-				"Flxg",
-				"FlxG	flixel"
-			],
-			[
-				"flxke",
-				"FlxKeyboard	flixel.input.keyboard"
-			],
-			[
-				"Fra",
-				"FrameRecord	flixel.system.replay"
-			],
-			[
-				"Flxkey",
-				"FlxKeyboard	flixel.input.keyboard"
-			],
-			[
-				"Array",
-				"Array<T>	class"
-			],
-			[
-				"re",
-				"recordFrame(  )	Void"
-			],
-			[
-				"repla",
-				"replay"
-			],
-			[
-				"Flxgro",
-				"FlxSpriteGroup	flixel.group"
-			],
-			[
-				"_r",
-				"_RIGHT	var"
-			],
-			[
 				"Flxgr",
 				"FlxSpriteGroup	flixel.group"
 			],
@@ -118,6 +26,10 @@
 			[
 				"el",
 				"timeLeft	Float"
+			],
+			[
+				"_",
+				"_roundTimer"
 			],
 			[
 				"_rou",
@@ -162,6 +74,10 @@
 			[
 				"flxr",
 				"FlxRandom	flixel.util"
+			],
+			[
+				"repla",
+				"FlxReplayEx	replayEx"
 			],
 			[
 				"replayEX",
@@ -232,6 +148,10 @@
 				"love.graphics.getWidth"
 			],
 			[
+				"key",
+				"keyreleased"
+			],
+			[
 				"_percent",
 				"_percentBarText	var"
 			],
@@ -280,6 +200,10 @@
 				"_negativeKeysDisplay"
 			],
 			[
+				"ke",
+				"keyfont__png	String"
+			],
+			[
 				"bitmap",
 				"FlxBitmapFont	flixel.addons.text"
 			],
@@ -296,8 +220,16 @@
 				"level	Int"
 			],
 			[
+				"in",
+				"intRanged(...)	Int"
+			],
+			[
 				"neg",
 				"negKeyList"
+			],
+			[
+				"Flx",
+				"FlxColor"
 			],
 			[
 				"Wh",
@@ -514,6 +446,74 @@
 			[
 				"F",
 				"FlxG"
+			],
+			[
+				"Flxc",
+				"FlxColor	flixel.util"
+			],
+			[
+				"flxg",
+				"FlxGroup	flixel.group"
+			],
+			[
+				"Pla",
+				"PlayState	class"
+			],
+			[
+				"play",
+				"play(...)	flixel.system.FlxSound"
+			],
+			[
+				"pass",
+				"passwordPrompt	flixel.system.FlxSound"
+			],
+			[
+				"fa",
+				"fadeOut(...)	flixel.system.FlxSound"
+			],
+			[
+				"music",
+				"music1	var"
+			],
+			[
+				"pre",
+				"prescreenAI	var"
+			],
+			[
+				"mu",
+				"music1"
+			],
+			[
+				"tas",
+				"task21__ogg"
+			],
+			[
+				"curr",
+				"CurrentAudio	var"
+			],
+			[
+				"m1BED1music_",
+				"m1BED1music__ogg"
+			],
+			[
+				"task",
+				"TASK1__ogg	String"
+			],
+			[
+				"pl",
+				"play(...)	flixel.system.FlxSound"
+			],
+			[
+				"a",
+				"add(...)	flixel.FlxBasic"
+			],
+			[
+				"T",
+				"TASK1__mp3	String"
+			],
+			[
+				"Flxr",
+				"FlxTimer"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "source/PlayState.hx",
 			"settings":
 			{
-				"buffer_size": 2733,
+				"buffer_size": 2326,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,15 +531,7 @@
 			"file": "source/Player.hx",
 			"settings":
 			{
-				"buffer_size": 7136,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
-			"settings":
-			{
-				"buffer_size": 44595,
+				"buffer_size": 3208,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +539,15 @@
 			"file": "source/FlxReplayEx.hx",
 			"settings":
 			{
-				"buffer_size": 5080,
+				"buffer_size": 5040,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/Reg.hx",
+			"settings":
+			{
+				"buffer_size": 921,
 				"line_ending": "Windows"
 			}
 		}
@@ -602,21 +602,18 @@
 	],
 	"file_history":
 	[
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxG.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/input/keyboard/FlxKeyboard.hx",
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/CodeValuePair.hx",
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxTimer.hx",
-		"/D/Projects/timetatics/Replay/source/Reg.hx",
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/input/keyboard/FlxKey.hx",
 		"/D/Projects/timetatics/Replay/source/FlxReplayEx.hx",
 		"/D/Projects/timetatics/Replay/source/replayEx/MouseRecordEx.hx",
 		"/D/Projects/timetatics/Replay/source/replayEx/FrameRecordEx.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/FlxReplay.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/FrameRecord.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/replay/CodeValuePair.hx",
 		"/D/Projects/timetatics/Replay/source/replayEx/FlxReplayEx.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/frontEnds/VCRFrontEnd.hx",
 		"/D/Projects/timetatics/Replay/source/Main.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
 		"/D/Projects/timetatics/Replay/Project.xml",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxObject.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/interfaces/IFlxSprite.hx",
@@ -628,6 +625,7 @@
 		"/D/Projects/HtMtG/game/default/source/Const.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxPoint.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxRandom.hx",
+		"/D/Projects/timetatics/Replay/source/Reg.hx",
 		"/D/Projects/timetatics/Replay/source/replayEx/CodeValuePairEx.hx",
 		"/D/Projects/timetatics/OLD/game/timewarp brawl/timewarp/gameView.lua",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/debug/VCR.hx",
@@ -729,7 +727,9 @@
 		"/C/Users/XX/Desktop/resize.php",
 		"/C/Users/XX/AppData/Local/Temp/7zO4DC9E018/php_image_magician.php",
 		"/C/Users/XX/Downloads/upload.php",
-		"/C/Users/XX/AppData/Local/Temp/7zO8A04ECBF/1.2_resize_advanced.php"
+		"/C/Users/XX/AppData/Local/Temp/7zO8A04ECBF/1.2_resize_advanced.php",
+		"/C/Users/XX/AppData/Local/Temp/7zO8A0B4845/15.1_chaining_(reset).php",
+		"/C/Users/XX/AppData/Local/Temp/7zO8A0200E4/14.1_upload.php"
 	],
 	"find":
 	{
@@ -755,22 +755,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"offset",
-			"bounding",
-			"load",
-			"%",
-			"width",
-			"new",
-			"trace",
-			"timer",
-			"trace",
-			"get",
-			"addKey",
-			"_keyLookup",
-			"getKeyCode",
-			"_vcr",
-			"FlxReplay",
-			"trace",
 			"mouseRecord",
 			"MouseRecord",
 			"mouseRecord",
@@ -882,7 +866,23 @@
 			"playerscore",
 			"towtimer",
 			"towTimer",
-			"timelimit"
+			"timelimit",
+			"towTimer",
+			"reset",
+			"timer2",
+			"timer",
+			"timelimit",
+			"timer",
+			"load",
+			"\")",
+			"score",
+			"]..\"-\"..",
+			"].)..'",
+			"greyout",
+			"IMGinfowindow4",
+			"height",
+			"accessgranted",
+			"acces"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1018,7 +1018,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1027,15 +1027,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2733,
+						"buffer_size": 2326,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								909,
-								909
+								1960,
+								1960
 							]
 						],
 						"settings":
@@ -1045,10 +1045,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 742.0,
+						"translation.y": 772.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1057,15 +1057,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7136,
+						"buffer_size": 3208,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6554,
-								6554
+								1592,
+								1592
 							]
 						],
 						"settings":
@@ -1076,57 +1076,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6747.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 44595,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21375,
-								21387
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 13030.0,
+						"translation.y": 1389.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "source/FlxReplayEx.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5080,
+						"buffer_size": 5040,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4520,
-								4520
+								4201,
+								4201
 							]
 						],
 						"settings":
@@ -1136,7 +1106,37 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3832.0,
+						"translation.y": 3876.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/Reg.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1178,7 +1178,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 181.0
+		"height": 213.0
 	},
 	"output.find_results":
 	{
