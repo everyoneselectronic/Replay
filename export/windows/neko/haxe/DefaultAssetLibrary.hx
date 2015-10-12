@@ -68,6 +68,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		Font.registerFont (__ASSET__assets_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__assets_fonts_arial_ttf);
 		
@@ -75,6 +76,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -584,6 +586,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_arial_ttf);
 		
@@ -609,6 +612,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sprites/sP2_down.png", AssetType.IMAGE);
 		path.set ("assets/sprites/sP2_punch.png", "assets/sprites/sP2_punch.png");
 		type.set ("assets/sprites/sP2_punch.png", AssetType.IMAGE);
+		path.set ("assets/sprites/ttd.png", "assets/sprites/ttd.png");
+		type.set ("assets/sprites/ttd.png", AssetType.IMAGE);
 		path.set ("assets/tiles.png", "assets/tiles.png");
 		type.set ("assets/tiles.png", AssetType.IMAGE);
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -651,6 +656,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sprites/sP2_punch.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/sprites/ttd.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/tiles.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -685,6 +693,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1433,11 +1442,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
 
 
 #elseif html5
+
 
 
 

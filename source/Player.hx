@@ -333,15 +333,21 @@ class Player extends FlxSprite
 		loadGraphic(SPRITE_DOWN, false, 80, 104);
 	}
 
-	function pickUpTTD():Void
+	public function pickUpTTD():Void
 	{
 		// can pucnch timer if running
-		if (_punchTimer.active)
+		if (_punchTimer != null)
 		{
-			_punchTimer.cancel();
+			if (_punchTimer.active)
+			{
+				_punchTimer.cancel();
+			}
 		}
+
 		_isPunching = false;
 		_canPunch = false;
+
+		loadGraphic(SPRITE_CARRY, false, 80, 104);
 	}
 
 	function dropTTD():Void
