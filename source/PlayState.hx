@@ -12,29 +12,16 @@ import openfl.Assets;
 import flixel.util.FlxRandom;
 import flixel.util.FlxTimer;
 
+import flixel.group.FlxTypedGroup;
 import flixel.group.FlxSpriteGroup;
 
 using flixel.util.FlxSpriteUtil;
 
 class PlayState extends FlxState
 {
-	/**
-	 * We use these to tell which mode we are at, recording or replaying
-	 */
-	private var recording:Bool = false;
-	private var replaying:Bool = false;
+	private var _replaying:Bool = false;
 	
-	/**
-	 * Some intructions
-	 */
-	private var _hintText:FlxText;
-	/**
-	 * Just a simple tilemap
-	 */
 	private var _tilemap:FlxTilemap;
-	/**
-	 * The blue block player controls
-	 */
 
 	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
@@ -47,12 +34,15 @@ class PlayState extends FlxState
 	private var _vcr:FlxReplayEx;
 
 	private var _roundTimer:FlxTimer;
-	private var _roundTime:Float = 100.0;
+	private var _roundTime:Float = 5.0;
 
 	private var _startGame = true;
+
+	private var _scores:FlxSpriteGroup;
 	
 	override public function create():Void
 	{
+		FlxG.mouse.visible = false;
 		
 		// Set up the TILEMAP
 		_tilemap = new FlxTilemap();
@@ -70,6 +60,7 @@ class PlayState extends FlxState
 
 		if (ReplayData.replays.length > 0)
 		{
+			_replaying = true;
 			// add recored players
 			_recorderPlayers = new FlxSpriteGroup();
 				for (i in 0...ReplayData.replays.length)
@@ -98,6 +89,18 @@ class PlayState extends FlxState
 			_currentPlayers.add(player);
 
 		add(_currentPlayers);
+
+		_scores = new FlxSpriteGroup(2);
+
+			var score = new FlxText(0, 0, null,"0",30);
+			_scores.add(score);
+
+			var score = new FlxText(300, 0, null,"0",30);
+			_scores.add(score);
+
+		add(_scores);
+		_scores.screenCenter();
+		_scores.y = 30;
 		
 		super.create();
 	}
@@ -105,10 +108,14 @@ class PlayState extends FlxState
 	override public function update():Void
 	{
 		FlxG.collide(_tilemap, _currentPlayers);
-		FlxG.collide(_tilemap, _recorderPlayers);
-
 		FlxG.overlap(_currentPlayers, checkPlayerPunch);
 		FlxG.overlap(_currentPlayers, _TTD, pickUpTTD);
+
+		if (_replaying)
+		{
+			FlxG.collide(_tilemap, _recorderPlayers);
+			FlxG.overlap(_recorderPlayers, checkPlayerPunch);
+		}
 
 		if (_startGame)
 		{
