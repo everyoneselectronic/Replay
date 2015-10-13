@@ -14,6 +14,8 @@ import flixel.util.FlxTimer;
 
 import flixel.group.FlxSpriteGroup;
 
+using flixel.util.FlxSpriteUtil;
+
 class PlayState extends FlxState
 {
 	/**
@@ -36,7 +38,11 @@ class PlayState extends FlxState
 
 	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
-	private var _TTD:FlxSprite;
+	private var _TTD:TDD;
+
+	private var _TTDReady:Bool = true;
+	private var _TTDcarrying:Bool = false;
+	private var _TDDPlayer:Int;
 
 	private var _vcr:FlxReplayEx;
 
@@ -77,7 +83,8 @@ class PlayState extends FlxState
 		}
 
 		// 56,60 size
-		_TTD = new FlxSprite(FlxG.width/2,FlxG.height/2,AssetPaths.ttd__png);
+		_TTD = new TDD(0,0);
+		_TTD.screenCenter();
 		add(_TTD);
 
 		// current players
@@ -100,7 +107,7 @@ class PlayState extends FlxState
 		FlxG.collide(_tilemap, _currentPlayers);
 		FlxG.collide(_tilemap, _recorderPlayers);
 
-		// FlxG.overlap(_currentPlayers, checkPlayerPunch);
+		FlxG.overlap(_currentPlayers, checkPlayerPunch);
 		FlxG.overlap(_currentPlayers, _TTD, pickUpTTD);
 
 		if (_startGame)
@@ -123,7 +130,46 @@ class PlayState extends FlxState
 
 	private function pickUpTTD(P:Player, TTD:FlxSprite):Void
 	{
-		P.pickUpTTD();
-		TTD.kill();
+		if(_TTD.getReady())
+		{
+			_TTD.pickUpTTD(P.playerNumber);
+
+			P.pickUpTTD();
+		}
+	}
+
+	private function dropTTD(x:Float,y:Float):Void
+	{
+		_TTD.reset(x,y);
+		_TTD.dropTTD();
+	}
+
+	private function checkPlayerPunch(P0:Player, P1:Player):Void
+	{
+		var p0Punching:Bool = P0.checkIsPunching();
+		var p1Punching:Bool = P1.checkIsPunching();
+
+		var p0TTD:Bool = P0.getCarryingTDD();
+		var p1TTD:Bool = P1.getCarryingTDD();
+
+		if (p0Punching)
+		{
+			if (p1TTD)
+			{
+				dropTTD(P1.x, P1.y);
+			}
+			P0.hasPunched();
+			P1.hit(P0.facing);
+		}
+
+		if (p1Punching)
+		{
+			if (p0TTD)
+			{
+				dropTTD(P0.x, P0.y);
+			}
+			P1.hasPunched();
+			P0.hit(P1.facing);
+		}
 	}
 }

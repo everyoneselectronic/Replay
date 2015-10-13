@@ -24,7 +24,7 @@ class Player extends FlxSprite
 	private var _isReplay:Bool = false;
 	private var _vcr:FlxReplayEx;
 
-	private var _playerNumber:Int;
+	public var playerNumber:Int;
 
 	private var _UP:String;
 	private var _DOWN:String;
@@ -43,14 +43,19 @@ class Player extends FlxSprite
 	private var _canPunch:Bool = true;
 	private var _punchDebounce:Bool = true;
 
+	private var _hit:Bool = false;
+	private var _hitTimer:FlxTimer;
+
 	private var _carryingTTD:Bool = false;
+
+	private var _runSpeed:Int = 300;
 
 	/**
 	 * This is the player object class.  Most of the comments I would put in here
 	 * would be near duplicates of the Enemy class, so if you're confused at all
 	 * I'd recommend checking that out for some ideas!
 	 */
-	public function new(X:Int, Y:Int, playerNumber:Int, ?isReplay:Bool, ?roundNumber:Int, ?replayData:String)
+	public function new(X:Int, Y:Int, playerNum:Int, ?isReplay:Bool, ?roundNumber:Int, ?replayData:String)
 	{
 		super(X, Y);
 
@@ -66,12 +71,12 @@ class Player extends FlxSprite
 			// _vcr.create(FlxRandom.globalSeed);
 		}
 
-		_playerNumber = playerNumber;
+		playerNumber = playerNum;
 
 		setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 
-		if (_playerNumber == 0)
+		if (playerNumber == 0)
 		{
 			_UP = "W";
 			_DOWN = "S";
@@ -103,18 +108,11 @@ class Player extends FlxSprite
 		}
 		
 		loadGraphic(SPRITE_DOWN);
-		
-		// Bounding box tweaks
-		// width = 80;
-		// height = 104;
-		// PUNCH_offset.set(1, 1);
-		
+				
 		// Basic player physics
-		var runSpeed:Int = 300;
-		drag.x = runSpeed * 4;
-		drag.y = runSpeed * 4;
-		// acceleration.y = 420;
-		maxVelocity.set(runSpeed,runSpeed);
+		drag.x = _runSpeed * 4;
+		drag.y = _runSpeed * 4;
+		maxVelocity.set(_runSpeed,_runSpeed);
 		
 	}
 	
@@ -269,24 +267,6 @@ class Player extends FlxSprite
         super.update();
 	}
 	
-	override public function hurt(Damage:Float):Void
-	{
-		Damage = 0;
-		
-		// FlxG.sound.play("Hurt");
-		
-		if (velocity.x > 0)
-		{
-			velocity.x = -maxVelocity.x;
-		}
-		else
-		{
-			velocity.x = maxVelocity.x;
-		}
-		
-		super.hurt(Damage);
-	}
-	
 	function moveLeft():Void
 	{
 		if (_isPunching)
@@ -364,6 +344,11 @@ class Player extends FlxSprite
 		loadGraphic(SPRITE_DOWN);
 	}
 
+	public function hasPunched():Void
+	{
+		_isPunching = false;
+	}
+
 	public function pickUpTTD():Void
 	{
 		// can pucnch timer if running
@@ -389,10 +374,49 @@ class Player extends FlxSprite
 		// reset
 		_carryingTTD = false;
 		_isPunching = false;
-		_canPunch = false;
+		_canPunch = true;
 
 		y += CARRY_OFFSET;
 		loadGraphic(SPRITE_DOWN);
+	}
 
+	public function getCarryingTDD():Bool
+	{
+		return _carryingTTD;
+	}
+
+	public function checkIsPunching():Bool
+	{
+		return _isPunching;
+	}
+
+	public function hit(direction:Int):Void
+	{
+		_hit = true;
+
+		if (direction == FlxObject.RIGHT)
+		{
+			maxVelocity.x = _runSpeed*10;
+			velocity.x = maxVelocity.x;
+			maxVelocity.x = _runSpeed;
+		}
+		else
+		{
+			maxVelocity.x = _runSpeed*10;
+			velocity.x = -maxVelocity.x;
+			maxVelocity.x = _runSpeed;
+		}
+
+		if (_carryingTTD)
+		{
+			dropTTD();
+		}
+		
+		// FlxG.sound.play("Hurt");
+	}
+
+	public function getHit():Bool
+	{
+		return _hit;
 	}
 }
