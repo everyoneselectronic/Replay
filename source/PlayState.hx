@@ -15,6 +15,7 @@ import flixel.util.FlxTimer;
 
 import flixel.group.FlxTypedGroup;
 import flixel.group.FlxSpriteGroup;
+import flixel.addons.display.FlxZoomCamera;
 
 using flixel.util.FlxSpriteUtil;
 
@@ -24,11 +25,12 @@ class PlayState extends FlxState
 	
 	private var _tilemap:FlxTilemap;
 
-	private var _camera:FlxCamera;
+	private var _camera:FlxZoomCamera;
 
 	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
 	private var _TTD:TDD;
+	private var _playersCenterPoint:FlxSprite;
 
 	private var _TTDReady:Bool = true;
 	private var _TTDcarrying:Bool = false;
@@ -54,7 +56,6 @@ class PlayState extends FlxState
 		_tilemap.y -= 15;
 
 		_roundTimer = new FlxTimer(_roundTime, restartGame, 1);
-		
 		
 		trace(Reg.level);
 
@@ -108,9 +109,16 @@ class PlayState extends FlxState
 		// _scores.screenCenter();
 		// _scores.y = 30;
 
-		_camera = new FlxCamera(0, 0, FlxG.width, FlxG.height);
-		_camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
-		// _camera.follow(_currentPlayers);
+		var xM = (_currentPlayers.members[0].x + _currentPlayers.members[1].x)/2;
+		var yM = (_currentPlayers.members[0].y + _currentPlayers.members[1].y)/2;
+
+		_playersCenterPoint = new FlxSprite(xM, yM);
+		_playersCenterPoint.makeGraphic(20,20,FlxColor.WHITE);
+		add(_playersCenterPoint);
+
+		_camera = new FlxZoomCamera(0, 0, FlxG.width, FlxG.height,1);
+		// _camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
+		_camera.follow(_playersCenterPoint);
 		FlxG.cameras.add(_camera);
 		
 		super.create();
@@ -201,22 +209,74 @@ class PlayState extends FlxState
 
 	public function updateCamera():Void
 	{
+		// update centerpoint
+		var xM = (_currentPlayers.members[0].x + _currentPlayers.members[1].x)/2;
+		var yM = (_currentPlayers.members[0].y + _currentPlayers.members[1].y)/2;
+
+		_playersCenterPoint.x = xM;
+		_playersCenterPoint.y = yM;
+
 		var p0:FlxPoint = new FlxPoint(_currentPlayers.members[0].x, _currentPlayers.members[0].y);
 		var p1:FlxPoint = new FlxPoint(_currentPlayers.members[1].x, _currentPlayers.members[1].y);
 
-		var distance = (Math.abs(p0.distanceTo(p1)))/100;
+		var distance = 13-(p0.distanceTo(p1)/100);
+
+		distance = map(distance,0.0,13.0,0.0,3.0);
 
 		trace(distance);
-		if (distance < 1)
+
+		_camera.zoom = distance;
+
+		if (distance > 1)
 		{
 			_camera.zoom = distance;
-			_camera.width = 1024;
-			_camera.height = 768;
 		}
 		else
 		{
 			_camera.zoom = 1;
 		}
+
+		// if (distance > 1)
+		// {
+		// 	if (distance > 6)
+		// 	{
+		// 		_camera.zoom = 6;
+		// 	}
+		// 	else
+		// 	{
+		// 		_camera.zoom = distance;
+		// 	}
+			
+		// }
+		// else
+		// {
+		// 	_camera.zoom = 1;
+		// }
 		
+	}
+
+
+	/**
+	 * 
+	 * @param	n initial value
+	 * @param	min1 the minimum number of the source
+	 * @param	max1 the maximum number of the source
+	 * @param	min2 the minimum number of the destination
+	 * @param	max2 the maximum number of the destination
+	 * @return	Float the mapped value
+	 */
+	private static function map(n:Float, min1:Float, max1:Float, min2:Float, max2:Float):Float
+	{
+		return lerp(norm(n, min1, max1), min2, max2);
+	}
+
+	private static function lerp(norm:Float, min:Float, max:Float):Float
+	{
+		return (max - min) * norm + min;
+	}
+
+	public static function norm(n:Float, min:Float, max:Float):Float
+	{
+		return (n - min) / (max - min);
 	}
 }

@@ -15,8 +15,8 @@ import flixel.system.replay.CodeValuePair;
 
 class Player extends FlxSprite
 {
-	static private var PUNCH_OFFSET:Int = 16;
-	static private var CARRY_OFFSET:Int = 48;
+	static private var PUNCH_OFFSET:Int = 4; //16
+	static private var CARRY_OFFSET:Int = 16; //46
 
 	private var _aim:Int;
 
