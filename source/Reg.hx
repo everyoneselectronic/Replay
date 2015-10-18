@@ -18,7 +18,7 @@ class Reg
 	 * Generic scores Array that can be used for cross-state stuff.
 	 * Example usage: Storing the scores for level.
 	 */
-	public static var scores:Array<Int> = [0,0];
+	public static var scores:Array<Int> = [1000,1000];
 
 
 	

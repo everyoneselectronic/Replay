@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxCamera;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
@@ -23,6 +24,8 @@ class PlayState extends FlxState
 	
 	private var _tilemap:FlxTilemap;
 
+	private var _camera:FlxCamera;
+
 	private var _currentPlayers:FlxSpriteGroup;
 	private var _recorderPlayers:FlxSpriteGroup;
 	private var _TTD:TDD;
@@ -34,11 +37,11 @@ class PlayState extends FlxState
 	private var _vcr:FlxReplayEx;
 
 	private var _roundTimer:FlxTimer;
-	private var _roundTime:Float = 5.0;
+	private var _roundTime:Float = 100.0;
 
 	private var _startGame = true;
 
-	private var _scores:FlxSpriteGroup;
+	private var _scores:FlxTypedGroup<FlxText>;
 	
 	override public function create():Void
 	{
@@ -65,9 +68,9 @@ class PlayState extends FlxState
 			_recorderPlayers = new FlxSpriteGroup();
 				for (i in 0...ReplayData.replays.length)
 				{
-					var player = new Player(100, 200, 0, true, i, ReplayData.replays[i]);
+					var player = new Player(100, 200, 0, this, true, i, ReplayData.replays[i]);
 					_recorderPlayers.add(player);
-					var player = new Player(900, 200, 1, true, i, ReplayData.replays[i]);
+					var player = new Player(900, 200, 1, this, true, i, ReplayData.replays[i]);
 					_recorderPlayers.add(player);
 				}
 			add(_recorderPlayers);
@@ -81,26 +84,34 @@ class PlayState extends FlxState
 		// current players
 		_currentPlayers = new FlxSpriteGroup();
 			// player 0
-			var player = new Player(100, 200, 0);
+			var player = new Player(100, 200, 0, this);
 			_currentPlayers.add(player);
 
 			//  player 1
-			var player = new Player(900, 200, 1);
+			var player = new Player(900, 200, 1, this);
 			_currentPlayers.add(player);
 
 		add(_currentPlayers);
 
-		_scores = new FlxSpriteGroup(2);
+		_scores = new FlxTypedGroup<FlxText>(2);
 
-			var score = new FlxText(0, 0, null,"0",30);
+			var xOffset = 300;
+			var yOffset = 30;
+
+			var score = new FlxText(xOffset + 0, yOffset, null, Std.string(Reg.scores[0]),30);
 			_scores.add(score);
 
-			var score = new FlxText(300, 0, null,"0",30);
+			var score = new FlxText(xOffset + 300, yOffset, null, Std.string(Reg.scores[1]),30);
 			_scores.add(score);
 
 		add(_scores);
-		_scores.screenCenter();
-		_scores.y = 30;
+		// _scores.screenCenter();
+		// _scores.y = 30;
+
+		_camera = new FlxCamera(0, 0, FlxG.width, FlxG.height);
+		_camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
+		// _camera.follow(_currentPlayers);
+		FlxG.cameras.add(_camera);
 		
 		super.create();
 	}
@@ -120,6 +131,7 @@ class PlayState extends FlxState
 		if (_startGame)
 		{
 			_vcr.recordFrame();
+			updateCamera();
 		}
 		else {
 			FlxG.resetState();
@@ -139,7 +151,7 @@ class PlayState extends FlxState
 	{
 		if(_TTD.getReady())
 		{
-			_TTD.pickUpTTD(P.playerNumber);
+			_TTD.pickUpTTD(P.getPlayerNum());
 
 			P.pickUpTTD();
 		}
@@ -178,5 +190,33 @@ class PlayState extends FlxState
 			P1.hasPunched();
 			P0.hit(P1.facing);
 		}
+	}
+
+	public function updateScore(playerNumer:Int):Void
+	{
+		Reg.scores[playerNumer]--;
+		trace(Reg.scores[playerNumer]);
+		_scores.members[playerNumer].text = Std.string(Reg.scores[playerNumer]);
+	}
+
+	public function updateCamera():Void
+	{
+		var p0:FlxPoint = new FlxPoint(_currentPlayers.members[0].x, _currentPlayers.members[0].y);
+		var p1:FlxPoint = new FlxPoint(_currentPlayers.members[1].x, _currentPlayers.members[1].y);
+
+		var distance = (Math.abs(p0.distanceTo(p1)))/100;
+
+		trace(distance);
+		if (distance < 1)
+		{
+			_camera.zoom = distance;
+			_camera.width = 1024;
+			_camera.height = 768;
+		}
+		else
+		{
+			_camera.zoom = 1;
+		}
+		
 	}
 }

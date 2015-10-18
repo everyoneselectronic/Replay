@@ -24,7 +24,7 @@ class Player extends FlxSprite
 	private var _isReplay:Bool = false;
 	private var _vcr:FlxReplayEx;
 
-	public var playerNumber:Int;
+	private var _playerNumber:Int;
 
 	private var _UP:String;
 	private var _DOWN:String;
@@ -50,14 +50,18 @@ class Player extends FlxSprite
 
 	private var _runSpeed:Int = 300;
 
+	private var _playState:PlayState;
+
 	/**
 	 * This is the player object class.  Most of the comments I would put in here
 	 * would be near duplicates of the Enemy class, so if you're confused at all
 	 * I'd recommend checking that out for some ideas!
 	 */
-	public function new(X:Int, Y:Int, playerNum:Int, ?isReplay:Bool, ?roundNumber:Int, ?replayData:String)
+	public function new(X:Int, Y:Int, playerNum:Int, playState:PlayState, ?isReplay:Bool, ?roundNumber:Int, ?replayData:String)
 	{
 		super(X, Y);
+
+		_playState = playState;
 
 		_isReplay = isReplay;
 
@@ -71,12 +75,12 @@ class Player extends FlxSprite
 			// _vcr.create(FlxRandom.globalSeed);
 		}
 
-		playerNumber = playerNum;
+		_playerNumber = playerNum;
 
 		setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 
-		if (playerNumber == 0)
+		if (_playerNumber == 0)
 		{
 			_UP = "W";
 			_DOWN = "S";
@@ -229,7 +233,8 @@ class Player extends FlxSprite
 				if (PUNCH && _punchDebounce)
 				{
 					_punchDebounce = false;
-					punch();
+					// punch();
+					actionKey();
 				}
 			}
 		}
@@ -259,7 +264,8 @@ class Player extends FlxSprite
 			// PUNCH
 			if (FlxG.keys.anyJustPressed([_PUNCH]))
 			{
-				punch();
+				actionKey();
+				// punch();
 			}
 
 		}
@@ -310,12 +316,29 @@ class Player extends FlxSprite
 	{
 		acceleration.y += drag.y;
 	}
-	
+
+	function actionKey():Void
+	{	
+		if (_carryingTTD)
+		{
+			pressTTD();
+		}
+		else if (_canPunch)
+		{
+			punch();
+		}
+	}
+
+	function pressTTD():Void
+	{
+		_playState.updateScore(_playerNumber);
+	}
+
 	function punch():Void
 	{	
 		if (_canPunch)
 		{
-			trace("punch");
+			// trace("punch");
 			_isPunching = true;
 			_canPunch = false;
 
@@ -418,5 +441,10 @@ class Player extends FlxSprite
 	public function getHit():Bool
 	{
 		return _hit;
+	}
+
+	public function getPlayerNum():Int
+	{
+		return _playerNumber;
 	}
 }
