@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"Flx",
+				"FlxColor"
+			],
+			[
+				"p",
+				"p0	var"
+			],
+			[
+				"h",
+				"h	var"
+			],
+			[
+				"he",
+				"height	Float"
+			],
+			[
+				"upda",
+				"updateCameraTest	function"
+			],
+			[
+				"_camer",
+				"_cameraTest	var"
+			],
+			[
+				"al",
+				"alpha	Float"
+			],
+			[
+				"_came",
+				"_cameraTest	var"
+			],
+			[
 				"fol",
 				"follow(...)	Void"
 			],
@@ -18,10 +50,6 @@
 			[
 				"WH",
 				"WHITE	Int"
-			],
-			[
-				"Flx",
-				"FlxSprite	flixel"
 			],
 			[
 				"fo",
@@ -486,34 +514,6 @@
 			[
 				"pad",
 				"padding"
-			],
-			[
-				"padd",
-				"padding-top"
-			],
-			[
-				"mar",
-				"margin-top"
-			],
-			[
-				"im",
-				"important"
-			],
-			[
-				"font-s",
-				"font-size"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"background-c",
-				"background-color"
-			],
-			[
-				"m",
-				"margin"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "source/PlayState.hx",
 			"settings":
 			{
-				"buffer_size": 6228,
+				"buffer_size": 6647,
 				"line_ending": "Windows"
 			}
 		},
@@ -618,6 +618,7 @@
 	[
 		"/D/Projects/timetatics/Replay",
 		"/D/Projects/timetatics/Replay/assets",
+		"/D/Projects/timetatics/Replay/assets/sprites_small",
 		"/D/Projects/timetatics/Replay/source",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel",
@@ -626,6 +627,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/test/index.php",
+		"/C/MAMP/htdocs/scrape/index.php",
 		"/D/Projects/timetatics/Replay/Project.xml",
 		"/D/Projects/timetatics/Replay/assets/simpleMap.csv",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxSpriteUtil.hx",
@@ -636,7 +639,6 @@
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/text/FlxText.hx",
 		"/C/Users/XX/Desktop/BOOOOOM/urls.txt",
 		"/C/Users/XX/Desktop/boom links.txt",
-		"/C/MAMP/htdocs/scrape/index.php",
 		"/C/MAMP/conf/php5.6.8/php.ini",
 		"/C/MAMP/htdocs/scrape/test_websocket_client.php",
 		"/C/MAMP/htdocs/scrape/vendor/autoload.php",
@@ -752,12 +754,11 @@
 		"/C/Users/XX/Desktop/love-dist-master/64/release/conf.lua",
 		"/C/Users/XX/Desktop/love-dist-master/32/release/conf.lua",
 		"/C/Users/XX/Desktop/love-dist-master/32/hacker/conf.lua",
-		"/C/Users/XX/AppData/Local/Temp/7zO4FCB9CBD/main.lua",
-		"/C/Users/XX/Desktop/projects/HtMtG/hacker6/media/infowindow4.png"
+		"/C/Users/XX/AppData/Local/Temp/7zO4FCB9CBD/main.lua"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -779,6 +780,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_playersCenterPoint",
+			"trace",
 			"width(",
 			"zoom",
 			"new",
@@ -904,9 +907,7 @@
 			"transferPacketToCache",
 			"packetCache",
 			"each",
-			"packetCachce",
-			" \n\nUpdate	Next Day\nIn Stock",
-			"Remove item|Move to saved list"
+			"packetCachce"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1059,15 +1060,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6228,
+						"buffer_size": 6647,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5211,
-								5211
+								3095,
+								3095
 							]
 						],
 						"settings":
@@ -1077,7 +1078,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4032.0,
+						"translation.y": 2033.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

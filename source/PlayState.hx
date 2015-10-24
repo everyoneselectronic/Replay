@@ -44,6 +44,8 @@ class PlayState extends FlxState
 	private var _startGame = true;
 
 	private var _scores:FlxTypedGroup<FlxText>;
+
+	private var _cameraTest:FlxSprite;
 	
 	override public function create():Void
 	{
@@ -113,14 +115,20 @@ class PlayState extends FlxState
 		var yM = (_currentPlayers.members[0].y + _currentPlayers.members[1].y)/2;
 
 		_playersCenterPoint = new FlxSprite(xM, yM);
-		_playersCenterPoint.makeGraphic(20,20,FlxColor.WHITE);
+		_playersCenterPoint.makeGraphic(1,1,FlxColor.WHITE);
+		_playersCenterPoint.visible = false;
 		add(_playersCenterPoint);
 
 		_camera = new FlxZoomCamera(0, 0, FlxG.width, FlxG.height,1);
-		// _camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
+		_camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
 		_camera.follow(_playersCenterPoint);
 		FlxG.cameras.add(_camera);
-		
+
+		// _cameraTest = new FlxSprite(0,0);
+		// _cameraTest.makeGraphic(400,300,FlxColor.RED);
+		// _cameraTest.alpha = 0.3;
+		// add(_cameraTest);
+
 		super.create();
 	}
 	
@@ -209,50 +217,48 @@ class PlayState extends FlxState
 
 	public function updateCamera():Void
 	{
+		var p0x = _currentPlayers.members[0].x + (_currentPlayers.members[0].width/2);
+		var p0y = _currentPlayers.members[0].y + (_currentPlayers.members[0].height/2);
+
+		var p1x = _currentPlayers.members[1].x + (_currentPlayers.members[1].width/2);
+		var p1y = _currentPlayers.members[1].y + (_currentPlayers.members[1].height/2);
+
+		var p0:FlxPoint = new FlxPoint(p0x, p0y);
+		var p1:FlxPoint = new FlxPoint(p1x, p1y);
+
+		var distance = Std.int(p0.distanceTo(p1)+200);
+
+		// var h = Std.int(distance);
+		// var w  = Std.int((4/3) * _cameraTest.height);
+		
+		// _cameraTest.makeGraphic(w,h);
+
 		// update centerpoint
-		var xM = (_currentPlayers.members[0].x + _currentPlayers.members[1].x)/2;
-		var yM = (_currentPlayers.members[0].y + _currentPlayers.members[1].y)/2;
+		var xM = (p0x + p1x)/2;
+		var yM = (p0y + p1y)/2;
 
-		_playersCenterPoint.x = xM;
-		_playersCenterPoint.y = yM;
+		// _cameraTest.x = xM - (_cameraTest.width/2);
+		// _cameraTest.y = yM - (_cameraTest.height/2);
 
-		var p0:FlxPoint = new FlxPoint(_currentPlayers.members[0].x, _currentPlayers.members[0].y);
-		var p1:FlxPoint = new FlxPoint(_currentPlayers.members[1].x, _currentPlayers.members[1].y);
+		_playersCenterPoint.x = xM;// - (_playersCenterPoint.width/2);
+		_playersCenterPoint.y = yM;// - (_playersCenterPoint.height/2);
 
-		var distance = 13-(p0.distanceTo(p1)/100);
+		// update camera zoom
+		var z = FlxG.height/distance;
 
-		distance = map(distance,0.0,13.0,0.0,3.0);
-
-		trace(distance);
-
-		_camera.zoom = distance;
-
-		if (distance > 1)
-		{
-			_camera.zoom = distance;
-		}
-		else
+		if (z < 1)
 		{
 			_camera.zoom = 1;
 		}
+		else if (z > 6)
+		{
+			_camera.zoom = 6;
+		}
+		else
+		{
+			_camera.zoom = z;
+		}
 
-		// if (distance > 1)
-		// {
-		// 	if (distance > 6)
-		// 	{
-		// 		_camera.zoom = 6;
-		// 	}
-		// 	else
-		// 	{
-		// 		_camera.zoom = distance;
-		// 	}
-			
-		// }
-		// else
-		// {
-		// 	_camera.zoom = 1;
-		// }
-		
 	}
 
 
