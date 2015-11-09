@@ -17,7 +17,21 @@ import flixel.group.FlxTypedGroup;
 import flixel.group.FlxSpriteGroup;
 import flixel.addons.display.FlxZoomCamera;
 
+import flixel.tile.FlxTilemap;
+
 using flixel.util.FlxSpriteUtil;
+
+/*
+
+game options
+
+winScore		- score to win, how many button press
+loopTime		- how long for round loop to last
+pastInteraction	- past can hit future but only oppsoite player
+friendlyFire	- if same play past selves can hit each other, plus current self
+
+
+*/
 
 class PlayState extends FlxState
 {
@@ -56,6 +70,13 @@ class PlayState extends FlxState
 		_tilemap.loadMap(Assets.getText("assets/simpleMap.csv"), "assets/tiles.png", 25, 25, FlxTilemap.AUTO);
 		add(_tilemap);
 		_tilemap.y -= 15;
+
+		var bg = new FlxTilemap();
+		bg.loadMap(Assets.getText(AssetPaths.test__csv), AssetPaths.tile__png, 16, 16);
+		add(bg);
+
+		// var bg = new TiledLevel(AssetPaths.bg__tmx);
+		// add(bg.backgroundTiles);
 
 		_roundTimer = new FlxTimer(_roundTime, restartGame, 1);
 		
@@ -121,7 +142,7 @@ class PlayState extends FlxState
 
 		_camera = new FlxZoomCamera(0, 0, FlxG.width, FlxG.height,1);
 		_camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
-		_camera.follow(_playersCenterPoint);
+		_camera.follow(_playersCenterPoint, 2);
 		FlxG.cameras.add(_camera);
 
 		// _cameraTest = new FlxSprite(0,0);
@@ -244,16 +265,16 @@ class PlayState extends FlxState
 		_playersCenterPoint.y = yM;// - (_playersCenterPoint.height/2);
 
 		// update camera zoom
-		var z = FlxG.height/distance;
+		var z = (FlxG.height/distance)*1.2;
 
 		if (z < 1)
 		{
 			_camera.zoom = 1;
 		}
-		else if (z > 6)
-		{
-			_camera.zoom = 6;
-		}
+		// else if (z > 6)
+		// {
+		// 	_camera.zoom = 6;
+		// }
 		else
 		{
 			_camera.zoom = z;

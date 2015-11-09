@@ -16,6 +16,14 @@ class AssetData {
 		
 		if (!initialized) {
 			
+			path.set ("assets/bg.csv", "assets/bg.csv");
+			type.set ("assets/bg.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/out - Copy.png", "assets/out - Copy.png");
+			type.set ("assets/out - Copy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/out.png", "assets/out.png");
+			type.set ("assets/out.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/sheet.png", "assets/sheet.png");
+			type.set ("assets/sheet.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/simpleMap.csv", "assets/simpleMap.csv");
 			type.set ("assets/simpleMap.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/sprites_small/sP1_carry0.png", "assets/sprites_small/sP1_carry0.png");
@@ -36,6 +44,10 @@ class AssetData {
 			type.set ("assets/sprites_small/sP2_punch.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/sprites_small/ttd.png", "assets/sprites_small/ttd.png");
 			type.set ("assets/sprites_small/ttd.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/test.csv", "assets/test.csv");
+			type.set ("assets/test.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/tile.png", "assets/tile.png");
+			type.set ("assets/tile.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/tiles.png", "assets/tiles.png");
 			type.set ("assets/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");

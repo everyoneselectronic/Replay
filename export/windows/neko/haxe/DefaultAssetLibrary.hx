@@ -69,6 +69,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		Font.registerFont (__ASSET__assets_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__assets_fonts_arial_ttf);
 		
@@ -76,6 +82,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -587,6 +599,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_arial_ttf);
 		
@@ -594,6 +612,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/bg.csv", "assets/bg.csv");
+		type.set ("assets/bg.csv", AssetType.TEXT);
+		path.set ("assets/out - Copy.png", "assets/out - Copy.png");
+		type.set ("assets/out - Copy.png", AssetType.IMAGE);
+		path.set ("assets/out.png", "assets/out.png");
+		type.set ("assets/out.png", AssetType.IMAGE);
+		path.set ("assets/sheet.png", "assets/sheet.png");
+		type.set ("assets/sheet.png", AssetType.IMAGE);
 		path.set ("assets/simpleMap.csv", "assets/simpleMap.csv");
 		type.set ("assets/simpleMap.csv", AssetType.TEXT);
 		path.set ("assets/sprites_small/sP1_carry0.png", "assets/sprites_small/sP1_carry0.png");
@@ -614,6 +640,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sprites_small/sP2_punch.png", AssetType.IMAGE);
 		path.set ("assets/sprites_small/ttd.png", "assets/sprites_small/ttd.png");
 		type.set ("assets/sprites_small/ttd.png", AssetType.IMAGE);
+		path.set ("assets/test.csv", "assets/test.csv");
+		type.set ("assets/test.csv", AssetType.TEXT);
+		path.set ("assets/tile.png", "assets/tile.png");
+		type.set ("assets/tile.png", AssetType.IMAGE);
 		path.set ("assets/tiles.png", "assets/tiles.png");
 		type.set ("assets/tiles.png", AssetType.IMAGE);
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -629,6 +659,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/bg.csv";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/out - Copy.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/out.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/sheet.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/simpleMap.csv";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -657,6 +699,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/sprites_small/ttd.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/test.csv";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/tile.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/tiles.png";
@@ -693,6 +741,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1443,11 +1497,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
 
 
 #elseif html5
+
+
+
+
+
+
 
 
 
