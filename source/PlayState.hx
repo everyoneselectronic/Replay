@@ -25,6 +25,7 @@ using flixel.util.FlxSpriteUtil;
 
 game options
 
+gameMode		- TugOfWar or IndidualScore.   tog- one score that the players are fighter over, if p0 gets 500, p2 has to negate the score to then start incceasing theirs.
 winScore		- score to win, how many button press
 loopTime		- how long for round loop to last
 pastInteraction	- past can hit future but only oppsoite player
@@ -71,9 +72,9 @@ class PlayState extends FlxState
 		add(_tilemap);
 		_tilemap.y -= 15;
 
-		var bg = new FlxTilemap();
-		bg.loadMap(Assets.getText(AssetPaths.test__csv), AssetPaths.tile__png, 16, 16);
-		add(bg);
+		// var bg = new FlxTilemap();
+		// bg.loadMap(Assets.getText(AssetPaths.test__csv), AssetPaths.tile__png, 16, 16);
+		// add(bg);
 
 		// var bg = new TiledLevel(AssetPaths.bg__tmx);
 		// add(bg.backgroundTiles);
@@ -92,7 +93,8 @@ class PlayState extends FlxState
 			_recorderPlayers = new FlxSpriteGroup();
 				for (i in 0...ReplayData.replays.length)
 				{
-					var player = new Player(100, 200, 0, this, true, i, ReplayData.replays[i]);
+
+					var player = new Player(ReplayData.playerStartPositions[0][0][0], ReplayData.playerStartPositions[0][0][1], 0, this, true, i, ReplayData.replays[i]);
 					_recorderPlayers.add(player);
 					var player = new Player(900, 200, 1, this, true, i, ReplayData.replays[i]);
 					_recorderPlayers.add(player);
@@ -234,6 +236,20 @@ class PlayState extends FlxState
 		Reg.scores[playerNumer]--;
 		trace(Reg.scores[playerNumer]);
 		_scores.members[playerNumer].text = Std.string(Reg.scores[playerNumer]);
+		checkScore(playerNumer);
+	}
+
+	private function checkScore(playerNumer:Int):Void
+	{
+		if (Reg.scores[playerNumer] <= 0) 
+		{
+			gameEnd();
+		}
+	}
+
+	private function gameEnd():Void
+	{
+		trace("END GAME!!!!!");
 	}
 
 	public function updateCamera():Void
@@ -249,17 +265,9 @@ class PlayState extends FlxState
 
 		var distance = Std.int(p0.distanceTo(p1)+200);
 
-		// var h = Std.int(distance);
-		// var w  = Std.int((4/3) * _cameraTest.height);
-		
-		// _cameraTest.makeGraphic(w,h);
-
 		// update centerpoint
 		var xM = (p0x + p1x)/2;
 		var yM = (p0y + p1y)/2;
-
-		// _cameraTest.x = xM - (_cameraTest.width/2);
-		// _cameraTest.y = yM - (_cameraTest.height/2);
 
 		_playersCenterPoint.x = xM;// - (_playersCenterPoint.width/2);
 		_playersCenterPoint.y = yM;// - (_playersCenterPoint.height/2);
@@ -271,39 +279,17 @@ class PlayState extends FlxState
 		{
 			_camera.zoom = 1;
 		}
-		// else if (z > 6)
-		// {
-		// 	_camera.zoom = 6;
-		// }
 		else
 		{
 			_camera.zoom = z;
 		}
-
 	}
 
-
-	/**
-	 * 
-	 * @param	n initial value
-	 * @param	min1 the minimum number of the source
-	 * @param	max1 the maximum number of the source
-	 * @param	min2 the minimum number of the destination
-	 * @param	max2 the maximum number of the destination
-	 * @return	Float the mapped value
-	 */
-	private static function map(n:Float, min1:Float, max1:Float, min2:Float, max2:Float):Float
+	private function spawnPlayers():Void
 	{
-		return lerp(norm(n, min1, max1), min2, max2);
+		// spawn player locations
+		// save locations for can be loaded with recorderd players
 	}
 
-	private static function lerp(norm:Float, min:Float, max:Float):Float
-	{
-		return (max - min) * norm + min;
-	}
 
-	public static function norm(n:Float, min:Float, max:Float):Float
-	{
-		return (n - min) / (max - min);
-	}
 }

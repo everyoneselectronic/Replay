@@ -9,5 +9,14 @@ import flixel.util.FlxSave;
  */
 class ReplayData
 {
-	public static var replays:Array<String> = [];	
+	public static var replays:Array<String> = [];
+	public static var playerStartPositions:Array<Array<Array<Int>>> =
+	[
+		[[100,200]]
+	];
+
+	// playerStartPositions[0][roundInt][xInt0]
+	// playerStartPositions[0][roundInt][yInt0]
+
+
 }

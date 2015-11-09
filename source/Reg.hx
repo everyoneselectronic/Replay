@@ -20,6 +20,6 @@ class Reg
 	 */
 	public static var scores:Array<Int> = [1000,1000];
 
-
+	public static var score:Int = 1000;
 	
 }
