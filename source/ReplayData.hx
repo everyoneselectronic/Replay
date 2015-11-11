@@ -10,6 +10,7 @@ import flixel.util.FlxSave;
 class ReplayData
 {
 	public static var replays:Array<String> = [];
+	
 	public static var playerStartPositions:Array<Array<Array<Int>>> =
 	[
 		[[100,200]]

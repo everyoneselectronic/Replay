@@ -20,6 +20,18 @@ class Reg
 	 */
 	public static var scores:Array<Int> = [1000,1000];
 
-	public static var score:Int = 1000;
+	// public static var score:Int = 1000;
+
+	public static var gameMode:Int = 0;
+
+	public static var gameModeName:Array<String> = ["TugOfWar", "Individual"];
+
+	public static var winScore:Int = 100;
+
+	public static var loopTime:Int = 10;
+
+	public static var pastInteraction:Bool = false;
+
+	public static var friendlyFire:Bool = false;
 	
 }

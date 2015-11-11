@@ -54,7 +54,7 @@ class PlayState extends FlxState
 	private var _vcr:FlxReplayEx;
 
 	private var _roundTimer:FlxTimer;
-	private var _roundTime:Float = 100.0;
+	private var _roundTime:Float = 0;
 
 	private var _startGame = true;
 
@@ -65,7 +65,9 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		FlxG.mouse.visible = false;
-		
+
+		_roundTime = Reg.loopTime;
+
 		// Set up the TILEMAP
 		_tilemap = new FlxTilemap();
 		_tilemap.loadMap(Assets.getText("assets/simpleMap.csv"), "assets/tiles.png", 25, 25, FlxTilemap.AUTO);
@@ -289,6 +291,8 @@ class PlayState extends FlxState
 	{
 		// spawn player locations
 		// save locations for can be loaded with recorderd players
+		// p0 area xy + wh
+		// p1 area xy + wh
 	}
 
 
