@@ -42,6 +42,32 @@ class MenuState extends FlxState
 
 		var fontsize = 30;
 
+		var menuLabels = new FlxTypedGroup<FlxText>(menuNames.length);
+		var labelGameMode = new FlxText(textx+0, texty+0, 300, menuNames[0] + ":", fontsize);
+		var labelWinScore = new FlxText(textx+0, texty+50, 300, menuNames[1] + ":", fontsize);
+		var labelLoopTime = new FlxText(textx+0, texty+100, 300, menuNames[2] + ":", fontsize);
+		var labelPastInteraction = new FlxText(textx+0, texty+150, 300, menuNames[3] + ":", fontsize);
+		var labelFriendlyFire = new FlxText(textx+0, texty+200, 300, menuNames[4] + ":", fontsize);
+
+		// var labelStartGame = new FlxText(textx+0, texty+300, 300, menuNames[5] + ":", fontsize);
+
+		menuLabels.add(labelGameMode);
+		menuLabels.add(labelWinScore);
+		menuLabels.add(labelLoopTime);
+		menuLabels.add(labelPastInteraction);
+		menuLabels.add(labelFriendlyFire);
+		// menuLabels.add(labelStartGame);
+
+		add(menuLabels);
+
+		labelGameMode.alignment = "right";
+		labelWinScore.alignment = "right";
+		labelLoopTime.alignment = "right";
+		labelPastInteraction.alignment = "right";
+		labelFriendlyFire.alignment = "right";
+		// labelStartGame.alignment = "right";
+
+		textx = 430;
 		menuText = new FlxTypedGroup<FlxText>(menuNames.length);
 
 		textGameMode = new FlxText(textx+0, texty+0, 0, Std.string(Reg.gameModeName[Reg.gameMode]), fontsize);
@@ -51,7 +77,6 @@ class MenuState extends FlxState
 		textFriendlyFire = new FlxText(textx+0, texty+200, 0, Std.string(Reg.friendlyFire), fontsize);
 
 		textStartGame = new FlxText(textx+0, texty+300, 0, "START GAME", fontsize);
-
 
 		menuText.add(textGameMode);
 		menuText.add(textWinScore);

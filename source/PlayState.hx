@@ -36,6 +36,13 @@ friendlyFire	- if same play past selves can hit each other, plus current self
 
 class PlayState extends FlxState
 {
+	// Width: 1300 Height: 725
+	private var P0LOWER:Int = 50050;	//90050,050		0050,050	-90000
+	private var P0UPPER:Int = 250675;	//90250,675		0250,675	-90000
+
+	private var P1LOWER:Int = 1000050;	//91000,050		1000,050
+	private var P1UPPER:Int = 1250675;	//91250,675		1250,675
+
 	private var _replaying:Bool = false;
 	
 	private var _tilemap:FlxTilemap;
@@ -61,18 +68,82 @@ class PlayState extends FlxState
 	private var _scores:FlxTypedGroup<FlxText>;
 
 	private var _cameraTest:FlxSprite;
+
+	private var hud:HUD;
+	private var hudCam:FlxCamera;
 	
 	override public function create():Void
 	{
+
 		FlxG.mouse.visible = false;
+
+		for (i in 1...250)
+		{
+			var u = i*1000;
+			var l = u-(1000-675);
+			for (a in l...u)
+			{
+				ReplayData.previousPositions.push(a);
+			}			 
+		}
 
 		_roundTime = Reg.loopTime;
 
 		// Set up the TILEMAP
+		var tileSize:Int = 25;
+		var tileData:String = "";
+
+		var tilesWidth = Math.ceil(FlxG.width/tileSize);
+		var tilesHeight = Math.ceil(FlxG.height/tileSize);
+
+		for (r in 0...tilesHeight)
+		{
+			if (r == 0 || r == tilesHeight-1) // top and bottom row
+			{
+				for (c in 0...tilesWidth)
+				{
+					if (c == 0)
+					{
+						tileData +=	"1,";
+					}
+					else if (c == tilesWidth-1)
+					{
+						tileData +=	"1\n";
+					}
+					else
+					{
+						tileData +=	"1,";
+					}
+				}
+			}
+			else //middle
+			{
+				for (c in 0...tilesWidth)
+				{
+					if (c == 0)
+					{
+						tileData +=	"1,";
+					}
+					else if (c == tilesWidth-1)
+					{
+						tileData +=	"1\n";
+					}
+					else
+					{
+						tileData +=	"0,";
+					}
+				}
+			}
+		}
+
 		_tilemap = new FlxTilemap();
-		_tilemap.loadMap(Assets.getText("assets/simpleMap.csv"), "assets/tiles.png", 25, 25, FlxTilemap.AUTO);
+		_tilemap.loadMap(tileData, "assets/tiles.png", tileSize, tileSize, FlxTilemap.AUTO);
 		add(_tilemap);
-		_tilemap.y -= 15;
+
+		trace("Width: " + _tilemap.width + " Height: " + _tilemap.height);
+
+		// w = 41		h = 32
+		// w = 	1025		h = 800
 
 		// var bg = new FlxTilemap();
 		// bg.loadMap(Assets.getText(AssetPaths.test__csv), AssetPaths.tile__png, 16, 16);
@@ -146,13 +217,16 @@ class PlayState extends FlxState
 
 		_camera = new FlxZoomCamera(0, 0, FlxG.width, FlxG.height,1);
 		_camera.setBounds(0, 0, _tilemap.width, _tilemap.height);
-		_camera.follow(_playersCenterPoint, 2);
+		_camera.follow(_playersCenterPoint, FlxCamera.STYLE_TOPDOWN, 1);
 		FlxG.cameras.add(_camera);
 
 		// _cameraTest = new FlxSprite(0,0);
 		// _cameraTest.makeGraphic(400,300,FlxColor.RED);
 		// _cameraTest.alpha = 0.3;
 		// add(_cameraTest);
+
+		hud = new HUD();
+		add(hud);
 
 		super.create();
 	}
@@ -173,6 +247,7 @@ class PlayState extends FlxState
 		{
 			_vcr.recordFrame();
 			updateCamera();
+			spawnPlayers();
 		}
 		else {
 			FlxG.resetState();
@@ -289,6 +364,38 @@ class PlayState extends FlxState
 
 	private function spawnPlayers():Void
 	{
+		//50,050
+		//250,675
+
+		// 675 1000
+
+		// for (i in 1...250)
+		// {
+		// 	var u = i*1000;
+		// 	var l = u-(1000-675);
+		// 	for (a in l...u)
+		// 	{
+		// 		ReplayData.previousPositions.push(a);
+		// 	}			 
+		// }
+
+
+		// 250,675 251,000
+
+		//91000,050		1000,050
+		//91250,675		1250,675
+
+		var n = FlxRandom.intRanged(P0LOWER,P0UPPER,ReplayData.previousPositions);
+		var p0x = Math.floor(n/1000);
+		var p0y = n - (p0x*1000);
+
+		ReplayData.previousPositions.push(n);
+
+		trace("x=" + p0x + " y=" + p0y);
+
+
+
+
 		// spawn player locations
 		// save locations for can be loaded with recorderd players
 		// p0 area xy + wh

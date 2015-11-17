@@ -57,8 +57,8 @@ class ApplicationMain {
 				
 				#if mobile
 				
-				forceWidth = 1024;
-				forceHeight = 768;
+				forceWidth = 1280;
+				forceHeight = 720;
 				
 				container = new flash.display.Sprite ();
 				barA = new flash.display.Sprite ();
@@ -127,7 +127,7 @@ class ApplicationMain {
 				}
 				
 			},
-			1024, 768, 
+			1280, 720, 
 			60, 
 			0,
 			(true ? flash.Lib.HARDWARE : 0) |
@@ -248,13 +248,13 @@ class ScaledStage extends flash.display.Stage {
 	
 	private override function get_stageHeight ():Int {
 		
-		return 768;
+		return 720;
 	
 	}
 	
 	private override function get_stageWidth ():Int {
 		
-		return 1024;
+		return 1280;
 	
 	}
 	
@@ -325,11 +325,11 @@ class ApplicationMain {
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "Replay", null, { width: 1024, height: 768 });
+			frame = wx.Frame.create (null, null, "Replay", null, { width: 1280, height: 720 });
 			
 			
 			#if openfl
-			var stage = wx.NMEStage.create (frame, null, null, { width: 1024, height: 768 });
+			var stage = wx.NMEStage.create (frame, null, null, { width: 1280, height: 720 });
 			#end
 			
 			var hasMain = false;
@@ -499,7 +499,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "651",
+			build: "731",
 			company: "HaxeFlixel",
 			file: "Replay",
 			fps: 60,
@@ -517,13 +517,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 768,
+					height: 720,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: false,
 					title: "Replay",
 					vsync: true,
-					width: 1024,
+					width: 1280,
 					x: null,
 					y: null
 				},
@@ -533,7 +533,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 1024, 768, "null");
+		openfl.Lib.embed (null, 1280, 720, "null");
 		#end
 		#else
 		create ();

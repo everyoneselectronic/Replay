@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"pre",
+				"previousPositions	Array<Int>"
+			],
+			[
+				"tr",
+				"TRANSPARENT	Int"
+			],
+			[
+				"Flx",
+				"FlxSprite	flixel"
+			],
+			[
+				"F",
+				"FlxG"
+			],
+			[
+				"tile",
+				"tileData	var"
+			],
+			[
+				"tiles",
+				"tilesHeight"
+			],
+			[
+				"w",
+				"width	Int"
+			],
+			[
+				"meu",
+				"menuLabels"
+			],
+			[
 				"win",
 				"winScore	Int"
 			],
@@ -38,10 +70,6 @@
 			[
 				"Flxgrou",
 				"FlxTypedGroup	flixel.group"
-			],
-			[
-				"meu",
-				"menuText	var"
 			],
 			[
 				"Flxgro",
@@ -102,10 +130,6 @@
 			[
 				"Ass",
 				"AssetPaths	class"
-			],
-			[
-				"Flx",
-				"FlxColor"
 			],
 			[
 				"p",
@@ -490,30 +514,6 @@
 			[
 				"_nega",
 				"_negativeKeys	var"
-			],
-			[
-				"_negative",
-				"_negativeKeysTimer	var"
-			],
-			[
-				"_info",
-				"_infoWindowRedTrace	var"
-			],
-			[
-				"_ke",
-				"_keyFont	var"
-			],
-			[
-				"_ne",
-				"_negativeKeysDisplay"
-			],
-			[
-				"bitmap",
-				"FlxBitmapFont	flixel.addons.text"
-			],
-			[
-				"bitma",
-				"FlxBitmapFont	flixel.addons.text"
 			]
 		]
 	},
@@ -523,7 +523,31 @@
 			"file": "source/PlayState.hx",
 			"settings":
 			{
-				"buffer_size": 6892,
+				"buffer_size": 8756,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/HUD.hx",
+			"settings":
+			{
+				"buffer_size": 1425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Project.xml",
+			"settings":
+			{
+				"buffer_size": 3097,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assets/simpleMap.csv",
+			"settings":
+			{
+				"buffer_size": 5616,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +555,7 @@
 			"file": "source/ReplayData.hx",
 			"settings":
 			{
-				"buffer_size": 486,
+				"buffer_size": 598,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,15 +571,7 @@
 			"file": "source/MenuState.hx",
 			"settings":
 			{
-				"buffer_size": 4864,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "source/Reg.hx",
-			"settings":
-			{
-				"buffer_size": 923,
+				"buffer_size": 5969,
 				"line_ending": "Windows"
 			}
 		}
@@ -610,6 +626,14 @@
 	],
 	"file_history":
 	[
+		"/C/HaxeToolkit/haxe/lib/flixel-addons/1,1,0/flixel/addons/display/FlxZoomCamera.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/tile/FlxTilemap.hx",
+		"/D/Projects/timetatics/Replay/assets/simpleMap.csv",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/text/FlxText.hx",
+		"/D/Projects/timetatics/Replay/source/Reg.hx",
+		"/C/MAMP/htdocs/art4all/anchor/config/db.php",
+		"/C/MAMP/htdocs/anchor-cms/install/run.php",
+		"/C/MAMP/htdocs/anchor-cms/themes/default/posts.php",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/group/FlxTypedGroup.hx",
 		"/D/Projects/timetatics/Replay/source/ReplayData.hx",
 		"/D/Projects/timetatics/Replay/Project.xml",
@@ -618,7 +642,6 @@
 		"/D/Projects/starlight all/starlight/cyberpunktest/source/Reg.hx",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/rss/creativeScotlandGlasgowAll.php",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/rss/creativeScotlandGlasgowJobs.php",
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/tile/FlxTilemap.hx",
 		"/C/MAMP/htdocs/rss/gumtreeNanny.php",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/erss/gumtreeNanny.php",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/erss/boom/boom4.php",
@@ -643,21 +666,17 @@
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/test/boom.php",
 		"/D/Projects/timetatics/Replay/assets/test.csv",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/test/boom2.php",
-		"/D/Projects/timetatics/Replay/source/Reg.hx",
 		"/D/Projects/timetatics/Replay/source/Player.hx",
 		"/D/Projects/timetatics/Replay/source/TDD.hx",
 		"/D/Projects/timetatics/Replay/source/FlxReplayEx.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxPoint.hx",
-		"/C/HaxeToolkit/haxe/lib/flixel-addons/1,1,0/flixel/addons/display/FlxZoomCamera.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxCamera.hx",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/test/index.php",
 		"/C/MAMP/htdocs/scrape/index.php",
-		"/D/Projects/timetatics/Replay/assets/simpleMap.csv",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxSpriteUtil.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/group/FlxTypedSpriteGroup.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/group/FlxSpriteGroup.hx",
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/text/FlxText.hx",
 		"/C/Users/XX/Desktop/BOOOOOM/urls.txt",
 		"/C/Users/XX/Desktop/boom links.txt",
 		"/C/MAMP/conf/php5.6.8/php.ini",
@@ -734,10 +753,7 @@
 		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/index.html",
 		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/cytoscapeDirective.js",
 		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery/jquery.min.js",
-		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery-livequery/test/jquery.js",
-		"/C/Users/XX/Desktop/jquery.minq.js",
-		"/C/Users/XX/Desktop/jquery.min.js",
-		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery-metadata/test/jquery.js"
+		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery-livequery/test/jquery.js"
 	],
 	"find":
 	{
@@ -763,6 +779,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			",,",
+			",",
+			"alig",
 			"score",
 			"playstate",
 			"winScore",
@@ -887,10 +906,7 @@
 			"new node",
 			"newnode",
 			"label",
-			"key",
-			"nameStr",
-			"model",
-			"click"
+			"key"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -898,6 +914,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"\",\n\"",
 			"\",\"",
 			"\",\"http://www.booooooom.com",
@@ -1043,15 +1060,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6892,
+						"buffer_size": 8756,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6885,
-								6885
+								1946,
+								1946
 							]
 						],
 						"settings":
@@ -1061,7 +1078,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5261.0,
+						"translation.y": 7067.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1069,19 +1086,266 @@
 				},
 				{
 					"buffer": 1,
-					"file": "source/ReplayData.hx",
+					"file": "source/HUD.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 486,
+						"buffer_size": 1425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								303,
-								303
+								965,
+								965
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 218.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Project.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1595,
+								1595
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 335.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "assets/simpleMap.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								135
+							],
+							[
+								272,
+								272
+							],
+							[
+								409,
+								409
+							],
+							[
+								546,
+								546
+							],
+							[
+								683,
+								683
+							],
+							[
+								820,
+								820
+							],
+							[
+								957,
+								957
+							],
+							[
+								1094,
+								1094
+							],
+							[
+								1231,
+								1231
+							],
+							[
+								1368,
+								1368
+							],
+							[
+								1505,
+								1505
+							],
+							[
+								1642,
+								1642
+							],
+							[
+								1779,
+								1779
+							],
+							[
+								1916,
+								1916
+							],
+							[
+								2053,
+								2053
+							],
+							[
+								2190,
+								2190
+							],
+							[
+								2327,
+								2327
+							],
+							[
+								2464,
+								2464
+							],
+							[
+								2601,
+								2601
+							],
+							[
+								2738,
+								2738
+							],
+							[
+								2875,
+								2875
+							],
+							[
+								3012,
+								3012
+							],
+							[
+								3149,
+								3149
+							],
+							[
+								3286,
+								3286
+							],
+							[
+								3423,
+								3423
+							],
+							[
+								3560,
+								3560
+							],
+							[
+								3697,
+								3697
+							],
+							[
+								3834,
+								3834
+							],
+							[
+								3971,
+								3971
+							],
+							[
+								4108,
+								4108
+							],
+							[
+								4245,
+								4245
+							],
+							[
+								4382,
+								4382
+							],
+							[
+								4519,
+								4519
+							],
+							[
+								4656,
+								4656
+							],
+							[
+								4793,
+								4793
+							],
+							[
+								4930,
+								4930
+							],
+							[
+								5067,
+								5067
+							],
+							[
+								5204,
+								5204
+							],
+							[
+								5341,
+								5341
+							],
+							[
+								5478,
+								5478
+							],
+							[
+								5615,
+								5615
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 54.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/ReplayData.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								454,
+								454
 							]
 						],
 						"settings":
@@ -1089,7 +1353,7 @@
 							"haxe-build-id": 0,
 							"syntax": "Packages/Haxe/Haxe.tmLanguage"
 						},
-						"translation.x": 9.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1097,7 +1361,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 5,
 					"file": "source/Main.hx",
 					"semi_transient": false,
 					"settings":
@@ -1109,8 +1373,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								378,
+								378
 							]
 						],
 						"settings":
@@ -1120,27 +1384,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 812.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "source/MenuState.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4864,
+						"buffer_size": 5969,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4855,
-								4855
+								2677,
+								2677
 							]
 						],
 						"settings":
@@ -1150,40 +1414,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4125.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "source/Reg.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 923,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								622,
-								622
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 176.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1222,7 +1456,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 181.0
+		"height": 377.0
 	},
 	"output.find_results":
 	{
@@ -1232,7 +1466,7 @@
 	"project": "Replay.sublime-project",
 	"replace":
 	{
-		"height": 106.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -10,14 +10,18 @@ import flixel.util.FlxSave;
 class ReplayData
 {
 	public static var replays:Array<String> = [];
+
+	public static var previousPositions:Array<Int> = [];
 	
 	public static var playerStartPositions:Array<Array<Array<Int>>> =
-	[
-		[[100,200]]
+	[ // round
+		[ //player0		1
+			[100,200],[100,200]
+		]
 	];
 
-	// playerStartPositions[0][roundInt][xInt0]
-	// playerStartPositions[0][roundInt][yInt0]
+	// playerStartPositions[roundInt][playerInt0][xInt0]
+	// playerStartPositions[roundInt][playerInt0][yInt0]
 
 
 }
