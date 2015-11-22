@@ -72,6 +72,8 @@ class TDD extends FlxSprite
 
 		velocity.x = maxVelocity.x;
 		velocity.y = maxVelocity.y;
+
+		new FlxTimer(1.0, function(_) {_ready = true;}, 1);
 	}
 
 	public function getReady():Bool

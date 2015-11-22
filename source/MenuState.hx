@@ -1,5 +1,7 @@
 package;
 
+import flash.system.System;
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -35,7 +37,11 @@ class MenuState extends FlxState
 
 	override public function create():Void
 	{
+		resetGame();
+
 		FlxG.mouse.visible = false;
+
+		FlxG.sound.playMusic(AssetPaths.music__ogg, 0.05, true);
 
 		var textx = 100;
 		var texty = 100;
@@ -98,6 +104,18 @@ class MenuState extends FlxState
 
 	override public function update():Void
 	{
+		if (FlxG.keys.justPressed.ESCAPE)
+		{
+			#if desktop
+				System.exit(0);
+			#end
+		}
+
+		if (FlxG.keys.justPressed.F)
+		{
+			FlxG.fullscreen = !FlxG.fullscreen;
+		}
+
 		if (FlxG.keys.justPressed.UP)
 		{
 			menuNavigation(-1);
@@ -140,7 +158,6 @@ class MenuState extends FlxState
 			}
 		}
 
-
 		super.update();
 	}
 
@@ -160,14 +177,12 @@ class MenuState extends FlxState
 		}
 
 		menuText.members[menuActive].color = FlxColor.RED;
-
 	}
 
 	private function changeValue(direction:Int):Void
 	{
 		// switch case
 		switch (menuActive) {
-
 			case 0:
 				changeGameMode(direction);
 
@@ -226,7 +241,7 @@ class MenuState extends FlxState
 	{
 		// 5 sec - 0 sec
 		var maxLoopTime = 30;
-		var minLoopTime = 5;
+		var minLoopTime = 3;
 
 		Reg.loopTime = Reg.loopTime + direction;
 
@@ -239,7 +254,6 @@ class MenuState extends FlxState
 			Reg.loopTime = minLoopTime;
 		}
 		menuText.members[menuActive].text = Std.string(Reg.loopTime);
-		
 	}
 
 	private function changePastInteraction():Void
@@ -258,8 +272,59 @@ class MenuState extends FlxState
 
 	private function startGame():Void
 	{
-		Reg.scores = [Reg.winScore, Reg.winScore];
+		spawnExceptions();
 		FlxG.switchState(new PlayState());
+	}
+
+	private function spawnExceptions():Void
+	{
+		for (player in Reg.playerSpawnLimtsEx)
+		{
+			var uX = Math.ceil(player[1]/1000);
+			var uY = player[1]-((uX-1)*1000);
+
+			var lX = Math.ceil(player[0]/1000);
+			var lY = player[0]-((lX-1)*1000);
+
+			// lower ex
+			for (i in lX-1...uX)
+			{
+				var u = i*1000;
+				var l = u+lY;
+				for (n in u...l)
+				{
+					// trace(n);
+					ReplayData.previousPositions.push(n);
+				}	 
+			}
+
+			// upper ex
+			for (i in lX...uX)
+			{
+				var u = i*1000;
+				var l = u-(1000-uY);
+				for (n in l...u)
+				{
+					// trace(n);
+					ReplayData.previousPositions.push(n);
+				}	 
+			}
+		}
+	}
+
+	private function resetGame():Void
+	{
+		Reg.level = 0;
+		Reg.scores = [0,0];
+		Reg.gameMode = 0;
+		Reg.winScore = 100;
+		Reg.loopTime  = 10;
+		Reg.pastInteraction = true;
+		Reg.friendlyFire = false;
+
+		ReplayData.replays = [];
+		ReplayData.previousPositions = [];
+		ReplayData.playerStartPositions = [];
 	}
 
 }

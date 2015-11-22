@@ -4,6 +4,94 @@
 		"selected_items":
 		[
 			[
+				"p1",
+				"p1num	var"
+			],
+			[
+				"p0",
+				"p0num	var"
+			],
+			[
+				"int",
+				"Int	class"
+			],
+			[
+				"fre",
+				"friendlyFire	Bool"
+			],
+			[
+				"inter",
+				"pastInteraction	Bool"
+			],
+			[
+				"Wh",
+				"WHITE	Int"
+			],
+			[
+				"_",
+				"_TTDcarrying	var"
+			],
+			[
+				"score",
+				"scorePosition	function"
+			],
+			[
+				"update",
+				"updateScore	function"
+			],
+			[
+				"typeds",
+				"FlxTypedSpriteGroup	flixel.group"
+			],
+			[
+				"swi",
+				"switchState(...)	Void"
+			],
+			[
+				"Fl",
+				"FlxG"
+			],
+			[
+				"E",
+				"ESCAPE	Bool"
+			],
+			[
+				"_re",
+				"_recorderPlayers	var"
+			],
+			[
+				"Bl",
+				"BLUE	Int"
+			],
+			[
+				"fl",
+				"Float	class"
+			],
+			[
+				"Score",
+				"scores	Array<Int>"
+			],
+			[
+				"game",
+				"gameMode	Int"
+			],
+			[
+				"player",
+				"playerStartPositions	Array<Array<Array<Int>>>"
+			],
+			[
+				"p",
+				"player	var"
+			],
+			[
+				"players",
+				"playerSpawnLimtsEx	Array<Array<Int>>"
+			],
+			[
+				"pla",
+				"playerStartPositions	Array<Array<Array<Int>>>"
+			],
+			[
 				"pre",
 				"previousPositions	Array<Int>"
 			],
@@ -88,14 +176,6 @@
 				"pastInteraction	Bool"
 			],
 			[
-				"game",
-				"gameModeName	Array<String>"
-			],
-			[
-				"fl",
-				"FlxUIButton"
-			],
-			[
 				"ui",
 				"FlxUIButton"
 			],
@@ -130,10 +210,6 @@
 			[
 				"Ass",
 				"AssetPaths	class"
-			],
-			[
-				"p",
-				"p0	var"
 			],
 			[
 				"h",
@@ -182,14 +258,6 @@
 			[
 				"i",
 				"int( x : Float )	Int"
-			],
-			[
-				"Fl",
-				"FlxG	flixel"
-			],
-			[
-				"_",
-				"_tilemap	var"
 			],
 			[
 				"payer",
@@ -250,10 +318,6 @@
 			[
 				"_tt",
 				"_TTD	var"
-			],
-			[
-				"player",
-				"_player	var"
 			],
 			[
 				"_pu",
@@ -450,128 +514,32 @@
 			[
 				"pack",
 				"packet"
-			],
-			[
-				"nic",
-				"nic"
-			],
-			[
-				"get",
-				"getName"
-			],
-			[
-				"packet",
-				"packetCache"
-			],
-			[
-				"stri",
-				"string.upper	(s)"
-			],
-			[
-				"curren",
-				"currentkeypressed"
-			],
-			[
-				"current",
-				"currentscore"
-			],
-			[
-				"to",
-				"tostring	(e)"
-			],
-			[
-				"gra",
-				"love.graphics.getWidth"
-			],
-			[
-				"_percent",
-				"_percentBarText	var"
-			],
-			[
-				"_percen",
-				"_percentBarText	var"
-			],
-			[
-				"FlxT",
-				"FlxText	flixel.text"
-			],
-			[
-				"_perce",
-				"_percentBar	var"
-			],
-			[
-				"bool",
-				"Bool	class"
-			],
-			[
-				"chec",
-				"checkNegKeyPress	function"
-			],
-			[
-				"keys",
-				"keysPressed	Int"
-			],
-			[
-				"_nega",
-				"_negativeKeys	var"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "source/PlayState.hx",
-			"settings":
-			{
-				"buffer_size": 8756,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "source/HUD.hx",
-			"settings":
-			{
-				"buffer_size": 1425,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Project.xml",
-			"settings":
-			{
-				"buffer_size": 3097,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "assets/simpleMap.csv",
-			"settings":
-			{
-				"buffer_size": 5616,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "source/ReplayData.hx",
-			"settings":
-			{
-				"buffer_size": 598,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "source/Main.hx",
-			"settings":
-			{
-				"buffer_size": 1955,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "source/MenuState.hx",
 			"settings":
 			{
-				"buffer_size": 5969,
+				"buffer_size": 7142,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/PlayState.hx",
+			"settings":
+			{
+				"buffer_size": 11353,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/Player.hx",
+			"settings":
+			{
+				"buffer_size": 7744,
 				"line_ending": "Windows"
 			}
 		}
@@ -617,7 +585,6 @@
 	"expanded_folders":
 	[
 		"/D/Projects/timetatics/Replay",
-		"/D/Projects/timetatics/Replay/assets",
 		"/D/Projects/timetatics/Replay/source",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel",
@@ -626,20 +593,33 @@
 	],
 	"file_history":
 	[
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/system/frontEnds/SoundFrontEnd.hx",
+		"/D/Projects/timetatics/Replay/source/Main.hx",
+		"/D/Projects/timetatics/Replay/source/TDD.hx",
+		"/D/Projects/timetatics/Replay/source/ReplayData.hx",
+		"/D/Projects/timetatics/Replay/source/Reg.hx",
+		"/D/Projects/timetatics/Replay/source/MenuState.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/text/FlxText.hx",
+		"/D/Projects/timetatics/Replay/source/Player.hx",
+		"/D/Projects/starlight all/starlight live/source/cpuScreens/CpuDesktopView.hx",
+		"/D/Projects/timetatics/Replay/source/HUD.hx",
+		"/C/Users/XX/Downloads/Dolphin-x64/Sys/GameSettings/GALE01r0.ini",
+		"/C/Users/XX/Downloads/galaxy.ini",
+		"/D/Projects/starlight all/starlight/cyberpunktest/source/Main.hx",
+		"/D/Projects/starlight all/starlight/cyberpunktest/source/Reg.hx",
+		"/C/HaxeToolkit/haxe/std/Array.hx",
+		"/D/Projects/timetatics/Replay/Project.xml",
+		"/C/Users/XX/Desktop/Replay-master/source/MenuState.hx",
+		"/C/Users/XX/Desktop/Replay-master/source/PlayState.hx",
+		"/C/Users/XX/Desktop/Replay-master/source/Reg.hx",
+		"/D/Projects/timetatics/Replay/assets/simpleMap.csv",
 		"/C/HaxeToolkit/haxe/lib/flixel-addons/1,1,0/flixel/addons/display/FlxZoomCamera.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/tile/FlxTilemap.hx",
-		"/D/Projects/timetatics/Replay/assets/simpleMap.csv",
-		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/text/FlxText.hx",
-		"/D/Projects/timetatics/Replay/source/Reg.hx",
 		"/C/MAMP/htdocs/art4all/anchor/config/db.php",
 		"/C/MAMP/htdocs/anchor-cms/install/run.php",
 		"/C/MAMP/htdocs/anchor-cms/themes/default/posts.php",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/group/FlxTypedGroup.hx",
-		"/D/Projects/timetatics/Replay/source/ReplayData.hx",
-		"/D/Projects/timetatics/Replay/Project.xml",
-		"/D/Projects/timetatics/Replay/source/Main.hx",
 		"/D/Projects/timetatics/Replay/source/TiledLevel.hx",
-		"/D/Projects/starlight all/starlight/cyberpunktest/source/Reg.hx",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/rss/creativeScotlandGlasgowAll.php",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/rss/creativeScotlandGlasgowJobs.php",
 		"/C/MAMP/htdocs/rss/gumtreeNanny.php",
@@ -666,8 +646,6 @@
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/test/boom.php",
 		"/D/Projects/timetatics/Replay/assets/test.csv",
 		"/C/Users/XX/AppData/Local/Temp/e0aa8e6b-f49a-47af-95a5-e8c1aaab434b/public_html/test/boom2.php",
-		"/D/Projects/timetatics/Replay/source/Player.hx",
-		"/D/Projects/timetatics/Replay/source/TDD.hx",
 		"/D/Projects/timetatics/Replay/source/FlxReplayEx.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/FlxSprite.hx",
 		"/C/HaxeToolkit/haxe/lib/flixel/3,3,11/flixel/util/FlxPoint.hx",
@@ -742,22 +720,11 @@
 		"/C/Users/XX/Desktop/GoJS-master/extensions/LinkLabelDragging.html",
 		"/C/Users/XX/Desktop/GoJS-master/samples/updateDemo.html",
 		"/C/Users/XX/Desktop/GoJS-master/samples/angular.html",
-		"/C/Users/XX/Desktop/GoJS-master/extensions/Robot.js",
-		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Packet.js",
-		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Nic.js",
-		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/Server.js",
-		"/C/Users/XX/Documents/GitHub/NetworkGame/scripts/app.js",
-		"/C/Users/XX/Documents/GitHub/NetworkGame/index.html",
-		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/app.js",
-		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/cytoscapeCtrl.js",
-		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/index.html",
-		"/C/Users/XX/Desktop/Cytoscape-simple-directive-master/js/cytoscapeDirective.js",
-		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery/jquery.min.js",
-		"/C/Users/XX/Documents/My Web Sites/SilverStripe CMS/framework/thirdparty/jquery-livequery/test/jquery.js"
+		"/C/Users/XX/Desktop/GoJS-master/extensions/Robot.js"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -779,6 +746,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".play",
+			"music",
+			"playernumber",
+			"punch",
+			"obj",
+			"size",
+			"get",
+			"ttd",
+			"_TTDcarrying",
+			"_TTDReady",
+			"_TTDcarrying",
+			"_TDDPlayer",
+			"score",
+			"timer",
+			"ttd",
+			"reg.scores",
+			"scores",
+			"reg.wins",
+			"spawnpla",
+			"end",
+			"start",
 			",,",
 			",",
 			"alig",
@@ -885,28 +873,7 @@
 			"FrameRecord",
 			"frameRecord",
 			"FrameRecord",
-			"start_record",
-			"keys",
-			"vcr",
-			"VCRFrontEnd",
-			"FlxG.vcr",
-			"DEFAULT_FILE_NAME",
-			"_cursor",
-			"f()",
-			"constrain",
-			"Mines_ClubDot",
-			"PoliceOfficeInterior",
-			"\n",
-			"_locker",
-			"_inventory",
-			"PlayWife_inventory",
-			"mydiagram",
-			"addNodeAndLink",
-			"nodeDataArray",
-			"new node",
-			"newnode",
-			"label",
-			"key"
+			"start_record"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1051,24 +1018,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "source/PlayState.hx",
+					"file": "source/MenuState.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8756,
+						"buffer_size": 7142,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1946,
-								1946
+								984,
+								984
 							]
 						],
 						"settings":
@@ -1078,27 +1045,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7067.0,
+						"translation.y": 2299.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "source/HUD.hx",
+					"file": "source/PlayState.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1425,
+						"buffer_size": 11353,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								965,
-								965
+								5450,
+								5450
 							]
 						],
 						"settings":
@@ -1108,7 +1075,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 218.0,
+						"translation.y": 4120.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1116,265 +1083,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "Project.xml",
+					"file": "source/Player.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3097,
+						"buffer_size": 7744,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1595,
-								1595
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 335.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "assets/simpleMap.csv",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5616,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								135,
-								135
-							],
-							[
-								272,
-								272
-							],
-							[
-								409,
-								409
-							],
-							[
-								546,
-								546
-							],
-							[
-								683,
-								683
-							],
-							[
-								820,
-								820
-							],
-							[
-								957,
-								957
-							],
-							[
-								1094,
-								1094
-							],
-							[
-								1231,
-								1231
-							],
-							[
-								1368,
-								1368
-							],
-							[
-								1505,
-								1505
-							],
-							[
-								1642,
-								1642
-							],
-							[
-								1779,
-								1779
-							],
-							[
-								1916,
-								1916
-							],
-							[
-								2053,
-								2053
-							],
-							[
-								2190,
-								2190
-							],
-							[
-								2327,
-								2327
-							],
-							[
-								2464,
-								2464
-							],
-							[
-								2601,
-								2601
-							],
-							[
-								2738,
-								2738
-							],
-							[
-								2875,
-								2875
-							],
-							[
-								3012,
-								3012
-							],
-							[
-								3149,
-								3149
-							],
-							[
-								3286,
-								3286
-							],
-							[
-								3423,
-								3423
-							],
-							[
-								3560,
-								3560
-							],
-							[
-								3697,
-								3697
-							],
-							[
-								3834,
-								3834
-							],
-							[
-								3971,
-								3971
-							],
-							[
-								4108,
-								4108
-							],
-							[
-								4245,
-								4245
-							],
-							[
-								4382,
-								4382
-							],
-							[
-								4519,
-								4519
-							],
-							[
-								4656,
-								4656
-							],
-							[
-								4793,
-								4793
-							],
-							[
-								4930,
-								4930
-							],
-							[
-								5067,
-								5067
-							],
-							[
-								5204,
-								5204
-							],
-							[
-								5341,
-								5341
-							],
-							[
-								5478,
-								5478
-							],
-							[
-								5615,
-								5615
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 54.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "source/ReplayData.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 598,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								454,
-								454
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "source/Main.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1955,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								378,
-								378
+								1877,
+								1877
 							]
 						],
 						"settings":
@@ -1384,40 +1105,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1235.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "source/MenuState.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5969,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2677,
-								2677
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1456,7 +1147,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 377.0
+		"height": 240.0
 	},
 	"output.find_results":
 	{
@@ -1466,7 +1157,7 @@
 	"project": "Replay.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1504,7 +1195,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 208.0,
+	"side_bar_width": 158.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

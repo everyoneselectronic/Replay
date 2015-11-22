@@ -49,8 +49,11 @@ class Player extends FlxSprite
 	private var _carryingTTD:Bool = false;
 
 	private var _runSpeed:Int = 300;
+	private var _ttdSpeed:Int = 200;
 
 	private var _playState:PlayState;
+
+	private var _volume:Float = 1;
 
 	/**
 	 * This is the player object class.  Most of the comments I would put in here
@@ -69,6 +72,8 @@ class Player extends FlxSprite
 			_vcr = new FlxReplayEx();
 			_replayData = replayData;
 			_vcr.load(replayData);
+
+			_volume = 0.1;
 		}
 		else
 		{
@@ -350,7 +355,7 @@ class Player extends FlxSprite
 			}
 
 			loadGraphic(SPRITE_PUNCH);
-			// FlxG.sound.play("Punch");
+			FlxG.sound.play(AssetPaths.drawKnife2__ogg, _volume);
 		}
 	}
 
@@ -390,6 +395,8 @@ class Player extends FlxSprite
 		y -= CARRY_OFFSET;
 
 		loadGraphic(SPRITE_CARRY);
+
+		maxVelocity.set(_ttdSpeed,_ttdSpeed);
 	}
 
 	function dropTTD():Void
@@ -401,6 +408,8 @@ class Player extends FlxSprite
 
 		y += CARRY_OFFSET;
 		loadGraphic(SPRITE_DOWN);
+
+		maxVelocity.set(_runSpeed,_runSpeed);
 	}
 
 	public function getCarryingTDD():Bool
@@ -435,7 +444,7 @@ class Player extends FlxSprite
 			dropTTD();
 		}
 		
-		// FlxG.sound.play("Hurt");
+		FlxG.sound.play(AssetPaths.footstep08__ogg, _volume);
 	}
 
 	public function getHit():Bool

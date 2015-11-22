@@ -9,18 +9,13 @@ import flixel.util.FlxSave;
  */
 class Reg
 {
-	/**
-	 * Generic level variable that can be used for cross-state stuff.
-	 * Example usage: Storing the current level number.
-	 */
-	public static var level:Int = 0;
-	/**
-	 * Generic scores Array that can be used for cross-state stuff.
-	 * Example usage: Storing the scores for level.
-	 */
-	public static var scores:Array<Int> = [1000,1000];
+	public static var playerSpawnLimtsEx:Array<Array<Int>> = [[5050,250675],[1000050,1250675]];
 
-	// public static var score:Int = 1000;
+	public static var playerSpawnLimtsCo:Array<Array<Int>> = [[50,50,250,675],[1000,50,1250,675]];
+
+	public static var level:Int = 0;
+
+	public static var scores:Array<Int> = [0,0];
 
 	public static var gameMode:Int = 0;
 
@@ -30,7 +25,7 @@ class Reg
 
 	public static var loopTime:Int = 10;
 
-	public static var pastInteraction:Bool = false;
+	public static var pastInteraction:Bool = true;
 
 	public static var friendlyFire:Bool = false;
 	
